@@ -6,7 +6,7 @@
 	<title>Applicant</title>
 </head>
 <body>
-<form action="Include/s_applicant.inc.php" method="post">
+<form action="controller/s_applicant.inc.php" method="post">
 	<input type="file" name="pic"><br>
 	<input type="text" name="name"><br>
 	<input type="text" name="reg_no"><br>
@@ -22,16 +22,11 @@
 	<label for="female">Female</label>
 	<input type="radio" name="gender" value="other">
 	<label for="other">Other</label><br>
-	<input type="text" name="father_name"><br>
-	<input type="text" name="mother_name"><br>
+	<input type="text" name="semester"><br>
 	<input type="date" name="dob"><br>
 
 	<!-- end of part 2 -->
 
-	<input type="text" name="vill_city"><br>
-	<input type="text" name="dist"><br>
-	<input type="text" name="state"><br>
-	<input type="text" name="pincode"><br>
 	<input type="text" name="m_number"><br>
 	<input type="text" name="email"><br>
 	<input type="submit" name="submit">
