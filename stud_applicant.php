@@ -6,7 +6,7 @@
 	<title>Applicant</title>
 </head>
 <body>
-<form action="controller/s_applicant.inc.php" method="post">
+<form action="controller/stud_applicant.inc.php" method="post">
 	<input type="file" name="pic"><br>
 	<input type="text" name="name"><br>
 	<input type="text" name="reg_no"><br>
@@ -29,8 +29,19 @@
 
 	<input type="text" name="m_number"><br>
 	<input type="text" name="email"><br>
+	<input type="password" name="pwd"><br>
+	<input type="password" name="repwd"><br>
 	<input type="submit" name="submit">
 </form>
-
+<?php 
+		if (isset($_GET["error"])) {
+			if ($_GET["error"] == "emptyinput") {
+				echo "<p><b>*Fill In All The Inputs</b></p>";
+			}
+			elseif ($_GET["error"] == "passwordsdonotmatch") {
+				echo "<p><b>*enter same password</b></p>";
+			}
+		}
+		?>
 </body>
 </html>
