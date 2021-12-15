@@ -14,7 +14,6 @@ session_start();
 		<input type="text" name="ad_username">
 		<input type="password" name="ad_password">
 		<input type="submit" name="ad_submit">
-		//
 	</form>
 
 </body>

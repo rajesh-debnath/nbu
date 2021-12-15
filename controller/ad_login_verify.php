@@ -19,7 +19,7 @@ $result = mysqli_query($conn, $sql);
    }
 
 if ($verify>0) {
-   header("Location:".$baseurl."nbu/admin_dashboard.php");
+   header("Location:".$baseurl."admin_dashboard.php");
 }
 else{
    echo "not ok";
