@@ -1,3 +1,0 @@
-<?php
-$baseurl="http://localhost/";
-?>
