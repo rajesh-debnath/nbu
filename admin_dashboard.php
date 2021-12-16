@@ -1,3 +1,8 @@
+<?php session_start();
+include 'controller/connection.php';
+include 'controller/baseurlconfig.php';
+$ad_username=$_SESSION['ad_username'];
+?>
 <!DOCTYPE html>
 <html>
 <head>
