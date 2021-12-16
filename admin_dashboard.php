@@ -13,7 +13,7 @@ $ad_username=$_SESSION['ad_username'];
 <body>
 	<p>Student</p>
 	<ul>
-		<li>Pending Applicant</li>
+		<li><a href="<?php $baseurl ?>admin_stud_applicant_pending.php"> Pending Applicant</a></li>
 		<li>MSc. Computer science</li>
 		<li>MCA</li>
 	</li>
