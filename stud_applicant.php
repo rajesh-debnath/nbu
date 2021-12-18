@@ -15,10 +15,11 @@
 			elseif ($_GET["error"] == "none") {
 				$a = "*application taken";
 			}
-			else{
+			
+		}
+		else{
 				$a = " ";
 			}
-		}
 		?>
 
 <!DOCTYPE html>
@@ -32,7 +33,7 @@
 <form action="controller/stud_applicant.inc.php" method="post" enctype="multipart/form-data">
 	<input type="file" name="pic"><br>
 	<input type="text" name="name"><br>
-	<input type="text" name="reg_no"><br>
+	<input type="text" name="reg_no" placeholder="reg_no"><br>
 	<input type="text" name="reg_session"><br>
 	<input type="text" name="course"><br>
 	<input type="text" name="class_roll"><br>
