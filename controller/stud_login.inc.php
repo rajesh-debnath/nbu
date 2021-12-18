@@ -1,4 +1,5 @@
 <?php
 if (isset($_POST["submit"])) {
-	// code...
+	$reg_no = $_POST['reg_no'];
+	$pwd = $_POST['pwd'];
 }
