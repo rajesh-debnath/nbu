@@ -1,3 +1,26 @@
+ <?php 
+		if (isset($_GET["error"])) {
+			if ($_GET["error"] == "emptyinput") {
+				$a = "*Fill In All The Inputs";
+			}
+			elseif ($_GET["error"] == "passwordsdonotmatch") {
+				$a = "*enter same password";
+			}
+			elseif ($_GET["error"] == "imgwrongsize") {
+				$a = "*Sorry, your file is too large";
+			}
+			elseif ($_GET["error"] == "imgwrongextent") {
+				$a = "*Sorry, your file is not jpg or jpeg";
+			}
+			elseif ($_GET["error"] == "none") {
+				$a = "*application taken";
+			}
+			else{
+				$a = " ";
+			}
+		}
+		?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,7 +29,7 @@
 	<title>Applicant</title>
 </head>
 <body>
-<form action="controller/stud_applicant.inc.php" method="post">
+<form action="controller/stud_applicant.inc.php" method="post" enctype="multipart/form-data">
 	<input type="file" name="pic"><br>
 	<input type="text" name="name"><br>
 	<input type="text" name="reg_no"><br>
@@ -33,15 +56,7 @@
 	<input type="password" name="repwd"><br>
 	<input type="submit" name="submit">
 </form>
-<?php 
-		if (isset($_GET["error"])) {
-			if ($_GET["error"] == "emptyinput") {
-				echo "<p><b>*Fill In All The Inputs</b></p>";
-			}
-			elseif ($_GET["error"] == "passwordsdonotmatch") {
-				echo "<p><b>*enter same password</b></p>";
-			}
-		}
-		?>
+<div name=error> <?php echo $a ?></div>
+
 </body>
 </html>
