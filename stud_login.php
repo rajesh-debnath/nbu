@@ -8,7 +8,7 @@
 	<form action="controller/stud_login.inc.php" method="post">
 	<input type="text" name="reg_no">
 	<input type="password" name="pwd">
-	<button type="submit">login</button>
+	<button type="submit" name="login">login</button>
 	</form>
 
 </body>
