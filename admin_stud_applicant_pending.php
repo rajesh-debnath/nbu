@@ -20,7 +20,7 @@ if($_SESSION['ad_username'] == "" || !isset($_SESSION['ad_username']))
 </head>
 <body>
    <?php 
-         $sql = "SELECT stud_applicant.*,stud_profile.* FROM stud_applicant,stud_profile WHERE stud_applicant.sa_reg_no <> stud_profile.sp_reg_no";
+         $sql = "SELECT stud_applicant.sa_reg_no FROM stud_applicant EXCEPT SELECT stud_profile.sp_reg_no FROM stud_profile";
             $result = mysqli_query($conn, $sql);
 
              while($sa_profile = mysqli_fetch_array($result)) { 
@@ -28,7 +28,7 @@ if($_SESSION['ad_username'] == "" || !isset($_SESSION['ad_username']))
 
                <label><?php echo $sa_profile['sa_reg_no']; ?></label>
 
-               <label><a href="<?php echo $baseurl;?>admin_stud_profile.php?stud_reg_no=<?php echo $sa_profile['sa_reg_no'];?>"><button>view</button></a></label><br>
+               <label><a href="<?php echo $baseurl;?>admin_sa_profile.php?stud_reg_no=<?php echo $sa_profile['sa_reg_no'];?>"><button>view</button></a></label><br>
   <?php
    }
 

@@ -25,9 +25,11 @@ $stud_reg_no=$_GET["stud_reg_no"];
                 $class_roll=$sa_profile['sa_class_roll'];
                 $ph_no=$sa_profile['sa_phn_no'];
                 $email=$sa_profile['sa_mail'];
-
+                $pass=$sa_profile['sa_pwd'];
                }
-
+               $_SESSION['pending_sa_reg_no']=$reg_no;
+               $_SESSION['pending_sa_pwd']=$pass;
+               $_SESSION['pending_sa_pic']=$pic;
 ?>
 
 <!DOCTYPE html>
@@ -38,33 +40,33 @@ $stud_reg_no=$_GET["stud_reg_no"];
    <title>Applicant</title>
 </head>
 <body>
-<form action="" method="post" enctype="multipart/form-data">
-   <img src="" style="width:30px;height:50px;"><br>
-   <input type="text" name="name"><br>
-   <input type="text" name="reg_no" placeholder="reg_no"><br>
-   <input type="text" name="reg_session"><br>
-   <input type="text" name="course"><br>
-   <input type="text" name="class_roll"><br>
+   <img src="s_profile_pic/<?php echo $pic;?>" style="width:60px;height:80px;"><br>
+   <p><?php echo $gender;?></p><br>
+   <p><?php echo $dob;?></p><br>
+   <p><?php echo $reg_no;?></p><br>
+   <p><?php echo $session;?></p><br>
+   <p><?php echo $course;?></p><br>
 
    <!-- end of part 1 -->
 
-   <input type="radio" name="gender" value="male">
-   <label for="male">Male</label>
-   <input type="radio" name="gender" value="female">
-   <label for="female">Female</label>
-   <input type="radio" name="gender" value="other">
-   <label for="other">Other</label><br>
-   <input type="text" name="semester"><br>
-   <input type="date" name="dob"><br>
+   <p><?php echo $semester;?></p><br>
+   <p><?php echo $class_roll;?></p><br>
+  <p><?php echo $ph_no;?></p><br>
 
    <!-- end of part 2 -->
 
-   <input type="text" name="m_number"><br>
-   <input type="text" name="email"><br>
-   <input type="password" name="pwd"><br>
-   <input type="password" name="repwd"><br>
-   <input type="submit" name="submit">
-</form>
+   <p><?php echo $email;?></p><br>
+
+   <a href="<?php echo $baseurl;?>controller/admin_sa_profile_approve.php?operation=1"><button>Approve</button></a>
+
+   <button onclick="reject.style.display='block'">Reject</button>
+
+   <form id="reject" style="display: none;" method="post" action="<?php echo $baseurl;?>controller/admin_sa_profile_reject.php">
+      <input type="text" name="resone">
+      <input type="submit" name="Reject">
+
+   </form>
+
 
 </body>
 </html>
