@@ -77,6 +77,7 @@ if (isset($_POST["login"])) {
 				$_SESSION['userName'] = 'rejected';
 				$_SESSION['userId'] = $row['r_reg_no'];
 				$_SESSION['reason'] = $row['r_resone'];
+				$_SESSION['verified'] = 0
 				header("location: ../stud_profile.php?error=rejected");
 				exit();
 			}	
