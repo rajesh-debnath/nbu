@@ -1,7 +1,11 @@
 <?php session_start();
 include 'controller/connection.php';
 include 'controller/baseurlconfig.php';
-$ad_username=$_SESSION['ad_username'];
+
+if($_SESSION['ad_username'] == "" || !isset($_SESSION['ad_username'])) 
+{
+   header("Location:".$baseurl."admin_login.php");
+}
 ?>
 <!DOCTYPE html>
 <html>

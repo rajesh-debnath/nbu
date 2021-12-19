@@ -19,7 +19,8 @@ $result = mysqli_query($conn, $sql);
 
 if ($verify>0) {
    header("Location:".$baseurl."admin_dashboard.php");
-    $_SESSION['ad_username'] = $ad_username;
+   $_SESSION['ad_username']=$ad_username;
+
 }
 else{
    echo "not ok";

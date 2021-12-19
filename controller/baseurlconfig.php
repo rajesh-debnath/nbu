@@ -1,3 +1,3 @@
 <?php
-$baseurl="http://localhost/nbu/";
+$baseurl="http://localhost:8888/nbu/";
 ?>

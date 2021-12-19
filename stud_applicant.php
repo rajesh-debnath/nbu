@@ -1,5 +1,5 @@
  <?php 
- $a = " ";
+ 		$a="";
 		if (isset($_GET["error"])) {
 			if ($_GET["error"] == "emptyinput") {
 				$a = "*Fill In All The Inputs";
@@ -58,7 +58,7 @@
 	<input type="password" name="repwd"><br>
 	<input type="submit" name="submit">
 </form>
-<div><?php echo $a ?></div>
+<div name="error"> <?php echo $a ?></div>
 
 </body>
 </html>
