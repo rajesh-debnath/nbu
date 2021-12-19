@@ -1,4 +1,5 @@
 <?php
+
 if (isset($_POST["login"])) {
 	$reg_no = $_POST['reg_no'];
 	$pwd = $_POST['pwd'];
@@ -94,3 +95,5 @@ if (isset($_POST["login"])) {
 else{
 	header("location: ../stud_login.php?error=why");
 }
+
+
