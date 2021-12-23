@@ -17,9 +17,8 @@ if($_SESSION['ad_username'] == "" || !isset($_SESSION['ad_username']))
 <body>
 	<p>Student</p>
 	<ul>
-		<li><a href="<?php $baseurl ?>admin_stud_applicant_pending.php"> Pending Applicant</a></li>
-		<li>MSc. Computer science</li>
-		<li>MCA</li>
+		<li><a href="<?php echo $baseurl;?>admin_stud_applicant_pending.php"> Pending Applicant</a></li>
+		<a href="<?php echo $baseurl;?>admin_search_stud.php"><li>MCA / MSc.Computer sc.</li></a>
 	</li>
 	</ul>
 
