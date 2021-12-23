@@ -20,7 +20,7 @@ if($_SESSION['ad_username'] == "" || !isset($_SESSION['ad_username']))
 </head>
 <body>
    <?php 
-         $sql = "SELECT stud_applicant.sa_reg_no FROM stud_applicant EXCEPT SELECT stud_profile.sp_reg_no FROM stud_profile";
+         $sql = "SELECT stud_applicant.sa_reg_no FROM stud_applicant WHERE sa_reg_no NOT IN (SELECT stud_profile.sp_reg_no FROM stud_profile)";
             $result = mysqli_query($conn, $sql);
 
              while($sa_profile = mysqli_fetch_array($result)) { 
