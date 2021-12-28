@@ -41,7 +41,7 @@
 			 <a class="navbar-brand" href="#"><img src="<?php echo $baseurl; ?>website_pic\logo.png" alt="logo" width="10%"><span class="ml-5">UNIVERSITY OF NORTH BENGAL</span></a>
 	<!--for search box -->
 			<form class="d-flex ml-10">
-      <input class="form-control mr-sm-2 flex-row-reverse" type="search" placeholder="Search" aria-label="Search">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-dark my-sm-0 bg-primary text-dark" type="submit">Search</button>
     	</form>
 		<!--end search option  -->
@@ -51,18 +51,17 @@
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
     <ul class="navbar-nav ml-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home</a>
+        <a class="nav-link" href="<?php echo $baseurl; ?>index.php">Home</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">About NBU</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Contact Us</a>
-      </li>    
-      
+      </li>   
     </ul>
   </div>  
-   
+ </div>  
 </nav>
 						
 	
@@ -78,21 +77,21 @@
 	  </ul>
 	  <div class="carousel-inner">
 	    <div class="carousel-item active">
-	      <img src="<?php echo $baseurl; ?>website_pic\img9.jpg" alt="Nbu" width="100%" height="400">
+	      <img src="<?php echo $baseurl; ?>website_pic\nbu6.jpg" alt="Nbu" width="100%" height="400px">
 	      <div class="carousel-caption">
 	        <h3 class="text-dark"></h3>
 	      
 	      </div>   
 	    </div>
 	    <div class="carousel-item">
-	      <img src="<?php echo $baseurl; ?>website_pic\img8.jpg" alt="nbu" width="100%" height="400">
+	      <img src="<?php echo $baseurl; ?>website_pic\nbu7.jpg" alt="nbu" width="100%" height="400px">
 	      <div class="carousel-caption">
 	        <h3 class="text-dark"></h3>
 	   
 	      </div>   
 	    </div>
 	    <div class="carousel-item">
-	      <img src="<?php echo $baseurl; ?>website_pic\img.jpg" alt="unbu" width="100%" height="400">
+	      <img src="<?php echo $baseurl; ?>website_pic\nbu8.jpg" alt="unbu" width="100%" height="400px">
 	      <div class="carousel-caption">
 	        <h3 class="text-dark"></h3>
 	        

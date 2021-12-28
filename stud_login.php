@@ -43,7 +43,7 @@
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
     <ul class="navbar-nav ml-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home</a>
+        <a class="nav-link" href="<?php echo $baseurl; ?>index.php">Home</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">About NBU</a>
@@ -54,7 +54,7 @@
       
     </ul>
   </div>  
-   
+ </div>  
 </nav>
 <!-- Navbar End -->
 
@@ -83,10 +83,12 @@
 		</table>
 		</div>
 	<input type="submit" name="login" value="Login" id="stud_btn"class="btn-outline-success rounded w-50">
+	 
 	</form>
-	<div class="col-12 forgot mt-3">
+	<div class="col-12 forgot mt-2">
 				<a href="#">Forgot Password?</a>
 			</div>	
+			<p class="link pt-2 font-weight-bold text-center">Dont't Have register? <a href="<?php echo $baseurl; ?>stud_applicant.php">New User</a></p>
 		</div>
 	</div>
 </div>
