@@ -78,21 +78,21 @@
 	  </ul>
 	  <div class="carousel-inner">
 	    <div class="carousel-item active">
-	      <img src="<?php echo $baseurl; ?>website_pic\img9.jpg" alt="Nbu" width="100%" height="450">
+	      <img src="<?php echo $baseurl; ?>website_pic\img9.jpg" alt="Nbu" width="100%" height="400">
 	      <div class="carousel-caption">
 	        <h3 class="text-dark"></h3>
 	      
 	      </div>   
 	    </div>
 	    <div class="carousel-item">
-	      <img src="<?php echo $baseurl; ?>website_pic\img8.jpg" alt="nbu" width="100%" height="450">
+	      <img src="<?php echo $baseurl; ?>website_pic\img8.jpg" alt="nbu" width="100%" height="400">
 	      <div class="carousel-caption">
 	        <h3 class="text-dark"></h3>
 	   
 	      </div>   
 	    </div>
 	    <div class="carousel-item">
-	      <img src="<?php echo $baseurl; ?>website_pic\img.jpg" alt="unbu" width="100%" height="450">
+	      <img src="<?php echo $baseurl; ?>website_pic\img.jpg" alt="unbu" width="100%" height="400">
 	      <div class="carousel-caption">
 	        <h3 class="text-dark"></h3>
 	        
@@ -117,8 +117,10 @@
 	    <div class="card  rounded-lg border border-success bg-light shadow p-4 mb-4 bg-white">
 	      <div class="card-body text-center">
 	        <p class="card-text  text-success font-weight-bolder">Student Zone</p>
-	        <button type="button" class="btn btn-outline-success mx-3 ">Log in</button>
-	          <button type="button" class="btn btn-outline-success mx-3">Register</button>
+	         <a href="<?php echo $baseurl; ?>stud_login.php">
+	        <button type="button" class="btn btn-outline-success mx-3 ">Log in</button></a>
+	         <a href="<?php echo $baseurl; ?>stud_applicant.php">
+	          <button type="button" class="btn btn-outline-success mx-3">Register</button></a>
 	       <!--  <span class="material-icons">person</span>
 	        <span class="material-icons">person_add</span> -->
 	      </div>
@@ -135,7 +137,8 @@
 	    <div class="card card rounded-lg border border-danger bg-light shadow p-4 mb-4 bg-white">
 	      <div class="card-body text-center">
 	        <p class="card-text  text-danger font-weight-bolder">Admin Zone</p>
-	        <button type="button" class="btn btn-outline-danger ">Log in</button>
+	        <a href="<?php echo $baseurl; ?>admin_login.php">
+	        <button type="button" class="btn btn-outline-danger ">Log in</button></a>
 
 	      </div>
 	    </div>
@@ -157,12 +160,5 @@
 
 	</footer>
 	<!-- Footer -->
-
-
-
-
-
-
-
 	</body>
 	</html>
