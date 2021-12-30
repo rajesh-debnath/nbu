@@ -20,6 +20,20 @@ if($_SESSION['ad_username'] == "" || !isset($_SESSION['ad_username']))
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+		<style type="text/css">
+			 .card{
+	  	overflow: hidden;
+	  }
+	  .card-body {
+	  	
+	    transition: all 0.3s ease;
+	    width: 100%;
+	}
+	  .card-body:hover {
+	    transform: scale(1.2);
+
+	  }
+		</style>
 	</head>
 	<body>
 		<!-- navbar start -->
@@ -41,16 +55,16 @@ if($_SESSION['ad_username'] == "" || !isset($_SESSION['ad_username']))
 				<div class="collapse navbar-collapse" id="collapsibleNavbar">
 					<ul class="navbar-nav ml-auto">
 						<li class="nav-item active">
-							<a class="nav-link" href="<?php echo $baseurl; ?>index.php">Home</a>
+							<a class="navbar-brand" href="<?php echo $baseurl; ?>index.php">Home</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#">About NBU</a>
+							<a class="navbar-brand" href="#">About NBU</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#">Contact Us</a>
+							<a class="navbar-brand" href="#">Change Password</a>
 						</li> 
 						<li class="nav-item">
-							<a class="nav-link" href="#">Contact Us</a>
+							<a class="navbar-brand" href="#">Log Out</a>
 						</li>    
 						
 					</ul>
@@ -59,32 +73,28 @@ if($_SESSION['ad_username'] == "" || !isset($_SESSION['ad_username']))
 			</nav>
 
 			<!-- Navbar End -->
+			<!-- card start -->
+<div class="container col-sm" style="padding-top: 10%">
+  
+  <div class="card-deck">
+    <div class="card bg-light">
+      <div class="card-body text-center rounded-lg border border-success shadow p-4 ">
+        <p class="card-text text-success font-weight-bolder ">Student Zone</p>
+							<ul class="list-unstyled">
+								<li><a href="<?php echo $baseurl;?>admin_search_stud.php">MCA / MSc.Computer sc.</li></a>
+								<li><a href="<?php echo $baseurl;?>admin_stud_applicant_pending.php">Pending Applicant</li></a>
 
-			<div class="container"  style="padding-top: 10%;">
-
-				<div class="card-columns m-4 text-center pl-5">
-
-					<div class="card  rounded-lg border border-success bg-light shadow p-4 mb-4 bg-white">
-						<div class="card-body text-center">
-							<p class="card-text  text-success font-weight-bolder">Student Zone</p>
-							<ul>
-								<a href="<?php echo $baseurl;?>admin_stud_applicant_pending.php"> <li>Pending Applicant</li></a>
 							</ul>
-						</div>
-					</div>
-
-					<div class="card card rounded-lg border border-info bg-light shadow p-4 mb-4 bg-white">
-						<div class="card-body text-center">
-							<p class="card-text  text-primary font-weight-bolder">Alumini Zone</p>
-							<ul>
-								<a href="<?php echo $baseurl;?>admin_search_stud.php"><li>MCA / MSc.Computer sc.</li></a>
-							</ul>
-
-						</div>
-					</div>
-				</div>
-			</div>
-
+      </div>
+    </div>
+    <div class="card bg-light">
+      <div class="card-body text-center rounded-lg border border-info  shadow p-4">
+        <p class="card-text text-primary font-weight-bolder">Alumini Zone</p>
+      </div>
+    </div>
+ </div>
+</div>
+<!-- card end -->			
 <!-- 	<p>Student</p>
 	<ul>
 		<li><a href=" echo $baseurl;?>admin_stud_applicant_pending.php"> Pending Applicant</a></li>
@@ -93,7 +103,7 @@ if($_SESSION['ad_username'] == "" || !isset($_SESSION['ad_username']))
 	</ul>
 -->
 <!-- Footer -->
-<footer class="page-footer font-small bg-dark">
+<footer class="page-footer font-small bg-dark" style="margin-top:85%">
 
 	<!-- Copyright -->
 	<div class="footer-copyright text-center py-3 text-white">© 2021 Copyright:

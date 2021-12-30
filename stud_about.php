@@ -1,3 +1,4 @@
+<?php include 'controller/baseurlconfig.php'; ?>
 <?php  
 session_start();
 include "controller/connection.php";
@@ -41,15 +42,60 @@ if($_SESSION['verified'] == 1){
 <head>
 	<meta charset="utf-8">
 	<title>about change</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<!-- 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	      rel="stylesheet"> -->
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 <body>
+	<!-- navbar start -->
+
+		<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+			<div class="container-fluid">
+			
+			 <a class="navbar-brand" href="#"><img src="<?php echo $baseurl; ?>website_pic\logo.png" alt="logo" width="10%"><span class="ml-5">UNIVERSITY OF NORTH BENGAL</span></a>
+	<!--for search box -->
+			<form class="d-flex ml-10">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-dark my-sm-0 bg-primary text-dark" type="submit">Search</button>
+    	</form>
+		<!--end search option  -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">
+        <a class="navbar-brand" href="<?php echo $baseurl; ?>index.php">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="navbar-brand" href="#">About NBU</a>
+      </li>
+      <li class="nav-item">
+        <a class="navbar-brand" href="#">Contact Us</a>
+      </li>  
+       
+       
+    </ul>
+  </div>  
+ </div>  
+</nav>
+<!-- Navbar End -->
+
+	<div class="container" style="padding-top: 95px; ">
+    <div class="field-set">
 <form action="controller/stud_about.inc.php" method="post">
-	<input type="text" name="phn_no" value="<?php echo $row1['sa_phn_no'];?>" ><br>
-	<input type="text" name="mail" value="<?php echo $row1['sa_mail'];?>"><br>
-	<input type="text" name="father" value="<?php echo $row2['sp_f_name'];?>"><br>
-	<input type="text" name="mother" value="<?php echo $row2['sp_m_name'];?>"><br>
+	<label>Mobile No: <?php echo $row1['sa_phn_no'];?></label><br>
+	<label>Email: <?php echo $row1['sa_mail'];?></label><br>
+	<label>Father's Name: <?php echo $row2['sp_f_name'];?></label><br>
+	<label>Mother's Name: <?php echo $row2['sp_m_name'];?></label><br>
 	<textarea rows="4" cols="50" name="add"><?php echo $row2['sp_add'];?> </textarea><br>
-	<button type="submit" name="change">Change about</button>
+	<button type="submit" name="change" class="btn btn-outline-success">Change about</button>
 </form>
+</div>
+</div>
 </body>
 </html>

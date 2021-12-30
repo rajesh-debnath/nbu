@@ -78,13 +78,13 @@ else{
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
     <ul class="navbar-nav ml-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="<?php echo $baseurl; ?>index.php">Home</a>
+        <a class="navbar-brand" href="<?php echo $baseurl; ?>index.php">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">About NBU</a>
+        <a class="navbar-brand" href="#">About NBU</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Contact Us</a>
+        <a class="navbar-brand" href="#">Contact Us</a>
       </li>
 
       
@@ -128,7 +128,7 @@ else{
 
 <!--Modal End -->
 <!-- Footer -->
-	<footer class="page-footer font-small bg-dark mb-0">
+	<footer class="page-footer font-small bg-dark" style="margin-top:40%">
 
 	  <!-- Copyright -->
 	  <div class="footer-copyright text-center py-3 text-white">© 2021 Copyright:

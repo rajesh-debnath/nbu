@@ -1,3 +1,4 @@
+<?php include 'controller/baseurlconfig.php'; ?>
 <?php
 session_start();
 include "controller/connection.php";
@@ -41,9 +42,50 @@ if($_SESSION['verified'] == 1){
 <html>
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>profile</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<!-- 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	      rel="stylesheet"> -->
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 <body>
+<!-- navbar start -->
+
+		<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+			<div class="container-fluid">
+			
+			 <a class="navbar-brand" href="#"><img src="<?php echo $baseurl; ?>website_pic\logo.png" alt="logo" width="10%"><span class="ml-5">UNIVERSITY OF NORTH BENGAL</span></a>
+	<!--for search box -->
+			<form class="d-flex ml-10">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-dark my-sm-0 bg-primary text-dark" type="submit">Search</button>
+    	</form>
+		<!--end search option  -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">
+        <a class="navbar-brand" href="<?php echo $baseurl; ?>index.php">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="navbar-brand" href="#">About NBU</a>
+      </li>
+      <li class="nav-item">
+        <a class="navbar-brand" href="#">Contact Us</a>
+      </li>  
+       
+       
+    </ul>
+  </div>  
+ </div>  
+</nav>
+<!-- Navbar End -->
+
 	<?php  
 	if($_SESSION['verified'] == 0 && $_SESSION['userName'] != 'rejected'){
 	?>
@@ -59,35 +101,35 @@ if($_SESSION['verified'] == 1){
 	elseif ($_SESSION['verified'] == 1 && $_SESSION['userName'] != 'rejected') {
 	?>
 	
-	<div><img src="s_profile_pic/<?php echo $row1['sa_profile_pic'];?>" style="width:60px;height:80px;"><br>
-	<input type="text" name="name" value="<?php echo $row1['sa_name'];?>" readonly><br>
-   <input type="text" name="grnder" value="<?php echo $row1['sa_gender'];?>" readonly><br>
-   <input type="text" name="dob" value="<?php echo $row1['sa_dob'];?>" readonly><br>
-   <input type="text" name="reg_no" value="<?php echo $row1['sa_reg_no'];?>" readonly>
-   <br>
-   <input type="text" name="session" value="<?php echo $row1['sa_session'];?>" readonly>
-   <br>
-   <input type="text" name="course" value="<?php echo $row1['sa_course'];?>" readonly>
-   <br>
+	<div class="container" style="padding-top: 95px; ">
+    <div class="field-set">
+    <img src="s_profile_pic/<?php echo $row1['sa_profile_pic'];?>" style="width:60px;height:80px;"><br>
+
+	<label>Name: <?php echo $row1['sa_name'];?></label><br>
+   <label>Gender: <?php echo $row1['sa_gender'];?></label><br>
+  <label>Date of Birth: <?php echo $row1['sa_dob'];?></label><br>
+   <label>Registration No: <?php echo $row1['sa_reg_no'];?></label><br>
+   <label>Session: <?php echo $row1['sa_session'];?></label><br>
+   <label>Course: <?php echo $row1['sa_course'];?></label><br>
 
    <!-- end of part 1 -->
 
-	<input type="text" name="semester" value="<?php echo $row1['sa_semester'];?>" readonly>
+	<label>Semester: <?php echo $row1['sa_semester'];?></label>
 	<br>
-	<input type="text" name="roll" value="<?php echo $row1['sa_class_roll'];?>" readonly>
+	<label>Class Roll:<?php echo $row1['sa_class_roll'];?></label>
 	<br>
-	<input type="text" name="phn_no" value="<?php echo $row1['sa_phn_no'];?>" readonly>
+	<label>Mobile No: <?php echo $row1['sa_phn_no'];?></label>
 	<br>
-	<input type="text" name="mail" value="<?php echo $row1['sa_mail'];?>" readonly><br>
+	<label>Email: <?php echo $row1['sa_mail'];?></label><br>
 		<?php
 		if ($row2['sp_f_name'] != "") { ?>
-			<input type="text" name="father" value="<?php echo $row2['sp_f_name'];?>" readonly><br>
+			<label><?php echo $row2['sp_f_name'];?></label><br>
 		<?php }
 		if ($row2['sp_m_name'] != "") { ?>
-			<input type="text" name="mother" value="<?php echo $row2['sp_m_name'];?>" readonly><br>
+			<label><?php echo $row2['sp_m_name'];?></label><br>
 		<?php }
 		if ($row2['sp_status'] != "") { ?>
-			<input type="text" name="status" value="<?php echo $row2['sp_status'];?>" readonly><br>
+			<label><?php echo $row2['sp_status'];?></label><br>
 		<?php }
 		if ($row2['sp_add'] != "") { ?>
 			<textarea rows="4" cols="50" name="add" readonly><?php echo $row2['sp_add'];?> </textarea><br> 
@@ -95,6 +137,7 @@ if($_SESSION['verified'] == 1){
 		<a href="stud_about.php">change about</a>
 
 	</div>
+</div>
 	<?php }
 	else{
 	?>

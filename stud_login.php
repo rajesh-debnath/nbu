@@ -43,15 +43,15 @@
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
     <ul class="navbar-nav ml-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="<?php echo $baseurl; ?>index.php">Home</a>
+        <a class="navbar-brand" href="<?php echo $baseurl; ?>index.php">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">About NBU</a>
+        <a class="navbar-brand" href="#">About NBU</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Contact Us</a>
+        <a class="navbar-brand" href="#">Contact Us</a>
       </li>    
-      
+         
     </ul>
   </div>  
  </div>  

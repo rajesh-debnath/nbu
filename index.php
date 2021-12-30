@@ -11,6 +11,7 @@
 	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	  <script type="text/javascript" src="https://kit.fontawesome.com/67c66657c7.js"></script>
 	  <style>
 	  /* Make the image fully responsive 
 	  .carousel-inner img {
@@ -45,6 +46,8 @@
       <button class="btn btn-outline-dark my-sm-0 bg-primary text-dark" type="submit">Search</button>
     	</form>
 		<!--end search option  -->
+		
+
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -58,7 +61,9 @@
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Contact Us</a>
-      </li>   
+      </li>  
+       
+       
     </ul>
   </div>  
  </div>  
