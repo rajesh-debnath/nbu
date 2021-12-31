@@ -36,38 +36,41 @@
 	<body>
 		<!-- navbar start -->
 
-		<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-			<div class="container-fluid">
-			
-			 <a class="navbar-brand" href="#"><img src="<?php echo $baseurl; ?>website_pic\logo.png" alt="logo" width="10%"><span class="ml-5">UNIVERSITY OF NORTH BENGAL</span></a>
-	<!--for search box -->
-			<form class="d-flex ml-10">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-dark my-sm-0 bg-primary text-dark" type="submit">Search</button>
-    	</form>
-		<!--end search option  -->
-		
+		<div class="wrapper">
+			<header class="header">
+				<div class="topbar bg-dark">
+					<a class="navbar-brand ml-2 " href="#"><img class="d-inline-block align-top" src="<?php echo $baseurl; ?>website_pic\logo.png" alt="logo" width="10%"><span class="ml-5 text-light font-weight-bolder">University of North Bengal</span></a>
+     <!--  <input  type="search" placeholder="Search">
+     	<span class="fa fa-search"></span> -->
+     </header>
+   </div>
+   <nav class="navbar navbar-expand-md navbar-light sticky-top" style="background-color: rgba(194, 194, 214, 1.0);">
+   	<div class="container" >
+   		<div class="mr-auto">
+   			<input  type="search" placeholder="Search">
+   			<button class="btn-sm btn-outline-dark my-sm-0 bg-primary text-light ml-2" type="submit">Search</button>
+   		</div>
+   		<!-- <span class="fa fa-search"></span> -->
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="collapsibleNavbar">
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="<?php echo $baseurl; ?>index.php">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">About NBU</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Contact Us</a>
-      </li>  
-       
-       
-    </ul>
-  </div>  
- </div>  
-</nav>
+   		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+   			<span class="navbar-toggler-icon "></span>
+   		</button>
+   		<div class="collapse navbar-collapse" id="collapsibleNavbar">
+   			<ul class="navbar-nav font-weight-bold ml-auto ">
+   				<li class="nav-item active">
+   					<a class="nav-link " href="<?php echo $baseurl; ?>index.php">Home</a>
+   				</li>
+   				<li class="nav-item active">
+   					<a class="nav-link " href="#">About NBU</a>
+   				</li>
+   				<li class="nav-item active">
+   					<a class="nav-link " href="#">Contact Us</a>
+   				</li>    
+
+   			</ul>
+   		</div>
+   	</div>
+   </nav>
 						
 	
 				<!-- Navbar End -->

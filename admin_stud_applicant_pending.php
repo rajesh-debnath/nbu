@@ -24,96 +24,100 @@ if($_SESSION['ad_username'] == "" || !isset($_SESSION['ad_username']))
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</head>
-<body>
-<!-- navbar start -->
+   </head>
+   <body>
+      <!-- navbar start -->
 
-      <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-         <div class="container-fluid ">
+      <!-- navbar start -->
 
-            <a class="navbar-brand" href="#"><img src="<?php echo $baseurl; ?>website_pic\logo.png" alt="logo" width="10%"><span class="ml-5">UNIVERSITY OF NORTH BENGAL</span></a>
-      <!--for search box -->
-            <form class="d-flex">
-               <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-               <button class="btn btn-outline-dark my-sm-0 bg-primary text-dark" type="submit">Search</button>
-            </form>
-      
-      <!--end search option  -->
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-               <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="collapsibleNavbar">
-               <ul class="navbar-nav ml-auto">
-                  <li class="nav-item active">
-                     <a class="navbar-brand" href="<?php echo $baseurl; ?>index.php">Home</a>
-                  </li>
-                  <li class="nav-item">
-                     <a class="navbar-brand" href="#">About NBU</a>
-                  </li>
-                  <li class="nav-item">
-                     <a class="navbar-brand" href="#">Change Password</a>
-                  </li> 
-                  <li class="nav-item">
-                     <a class="navbar-brand" href="#">Log Out</a>
-                  </li>    
-                  
-               </ul>
-            </div>  
-         </div>
-         </nav>
+      <div class="wrapper">
+         <header class="header">
+            <div class="topbar bg-dark">
+               <a class="navbar-brand ml-2 " href="#"><img class="d-inline-block align-top" src="<?php echo $baseurl; ?>website_pic\logo.png" alt="logo" width="10%"><span class="ml-5 text-light font-weight-bolder">University of North Bengal</span></a>
+     <!--  <input  type="search" placeholder="Search">
+      <span class="fa fa-search"></span> -->
+   </header>
+</div>
+<nav class="navbar navbar-expand-md navbar-light sticky-top" style="background-color: rgba(194, 194, 214, 0.8);">
+   <div class="container" >
+      <div class="mr-auto">
+         <input  type="search" placeholder="Search">
+         <button class="btn-sm btn-outline-dark my-sm-0 bg-primary text-light ml-2" type="submit">Search</button>
+      </div>
+      <!-- <span class="fa fa-search"></span> -->
 
-         <!-- Navbar End -->
-         
- <div class="container col-sm" style="padding-top: 10%">
-  
-  <div class="card">
-   <div class="card bg-light">
-      <div class="card-body text-center rounded-lg border border-success shadow p-4">
-        <p class="card-text text-primary font-weight-bolder">Student Zone</p>
-        <?php 
-         $sql = "SELECT stud_applicant.sa_reg_no FROM stud_applicant WHERE sa_reg_no NOT IN (SELECT stud_profile.sp_reg_no FROM stud_profile)";
-            $result = mysqli_query($conn, $sql);
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+         <span class="navbar-toggler-icon "></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+         <ul class="navbar-nav font-weight-bold ml-auto ">
+            <li class="nav-item active">
+               <a class="nav-link " href="<?php echo $baseurl; ?>index.php">Home</a>
+            </li>
+            <li class="nav-item active">
+               <a class="nav-link " href="#">About NBU</a>
+            </li>
+            <li class="nav-item active">
+               <a class="nav-link " href="#">Change Password</a>
+            </li> 
+            <li class="nav-item active" >
+               <a class="nav-link" href="#">Log Out</a>
+            </li>    
 
-             while($sa_profile = mysqli_fetch_array($result)) { 
-               ?> 
-               <table class="table table-borderless">
-              
-               <tbody>
-                  <tr>
-                    <td><label><?php echo $sa_profile['sa_reg_no']; ?></label></td>
-                 
-                     <td><label><a href="<?php echo $baseurl;?>admin_sa_profile.php?stud_reg_no=<?php echo $sa_profile['sa_reg_no'];?>"><button>view</button></a></label></td>
-                 </tr>
-              </tbody>
-           </table>
-              
+         </ul>
+      </div>
+   </div>
+</nav>
+<!-- Navbar End -->
+
+<div class="table-sm pt-2 pb-2 m-2 "><!--main page-->
+
+
+   <table class="table table-bordered" >
+     <thead class="table table-dark">
+      <tr>
+        <th class="text-light">Student Name</th>
+        <th class="text-light">Reg. NO</th>
+        <th class="text-light">Course</th>
+        <th class="text-light">Action</th>
+
+     </tr>
+  </thead>
   <?php 
-   }
+  $sql = "SELECT stud_applicant.* FROM stud_applicant WHERE sa_reg_no NOT IN (SELECT stud_profile.sp_reg_no FROM stud_profile)";
+  $result = mysqli_query($conn, $sql);
+
+  while($sa_profile = mysqli_fetch_array($result)) { 
+   ?> 
+
+   <tbody>
+      <tr>
+
+
+       <td><small><?php echo $sa_profile['sa_name']; ?></small></td>
+       <td><small><?php echo $sa_profile['sa_reg_no']; ?></small></td>
+       <td><small><?php echo $sa_profile['sa_course']; ?></small></td>
+       <td><small><a href="<?php echo $baseurl;?>admin_sa_profile.php?stud_reg_no=<?php echo $sa_profile['sa_reg_no'];?>"><button class="btn-secondary">view</button></a></small></td>
+
+
+    </tr>
+
+ </tbody>
+ <?php
+}
+
 ?>
 
-      </div>
-    </div>
- </div>
+
+</table>  
+
+
 </div>
 
 
-  <!--  <?php 
-         $sql = "SELECT stud_applicant.sa_reg_no FROM stud_applicant WHERE sa_reg_no NOT IN (SELECT stud_profile.sp_reg_no FROM stud_profile)";
-            $result = mysqli_query($conn, $sql);
 
-             while($sa_profile = mysqli_fetch_array($result)) { 
-               ?> 
-
-               <label><?php echo $sa_profile['sa_reg_no']; ?></label>
-
-               <label><a href="<?php echo $baseurl;?>admin_sa_profile.php?stud_reg_no=<?php echo $sa_profile['sa_reg_no'];?>"><button>view</button></a></label><br>
-  <?php
-   }
-
-    ?> -->
-
-    <!-- Footer -->
-<footer class="page-footer font-small bg-dark" style="margin-top:85%">
+<!-- Footer -->
+<footer class="page-footer font-small bg-dark">
 
    <!-- Copyright -->
    <div class="footer-copyright text-center py-3 text-white">© 2021 Copyright:

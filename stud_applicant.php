@@ -57,35 +57,44 @@ cursor:pointer;
 
 <!-- navbar start -->
 
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-            <div class="container-fluid">
-            
-             <a class="navbar-brand" href="#"><img src="<?php echo $baseurl; ?>website_pic\logo.png" alt="logo" width="10%"><span class="ml-5">UNIVERSITY OF NORTH BENGAL</span></a>
-    <!--for search box -->
-            <form class="d-flex ml-10">
-      <input class="form-control mr-sm-2 flex-row-reverse" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-dark my-sm-0 bg-primary text-dark" type="submit">Search</button>
-        </form>
-        <!--end search option  -->
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="collapsibleNavbar">
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item active">
-        <a class="navbar-brand" href="<?php echo $baseurl; ?>index.php">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="navbar-brand" href="#">About NBU</a>
-      </li>
-      <li class="nav-item">
-        <a class="navbar-brand" href="#">Contact Us</a>
-      </li>    
-      
-    </ul>
-  </div>  
- </div>  
-</nav>
+                <div class="wrapper">
+            <header class="header">
+                <div class="topbar bg-dark">
+                    <a class="navbar-brand ml-2 " href="#"><img class="d-inline-block align-top" src="<?php echo $baseurl; ?>website_pic\logo.png" alt="logo" width="10%"><span class="ml-5 text-light font-weight-bolder">University of North Bengal</span></a>
+     <!--  <input  type="search" placeholder="Search">
+        <span class="fa fa-search"></span> -->
+     </header>
+   </div>
+   <nav class="navbar navbar-expand-md navbar-light sticky-top" style="background-color: rgba(194, 194, 214, 0.8);">
+    <div class="container" >
+        <div class="mr-auto">
+            <input  type="search" placeholder="Search">
+            <button class="btn-sm btn-outline-dark my-sm-0 bg-primary text-light ml-2" type="submit">Search</button>
+        </div>
+        <!-- <span class="fa fa-search"></span> -->
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon "></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav font-weight-bold ml-auto ">
+                <li class="nav-item active">
+                    <a class="nav-link " href="<?php echo $baseurl; ?>index.php">Home</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link " href="#">About NBU</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link " href="#">Change Password</a>
+                </li> 
+                <li class="nav-item active" >
+                    <a class="nav-link" href="#">Log Out</a>
+                </li>    
+
+            </ul>
+        </div>
+    </div>
+   </nav>
                         
     
                 <!-- Navbar End -->
@@ -112,9 +121,9 @@ cursor:pointer;
                     <tr>
                     <td><label>Gender:</label></td>
                     <td class="mt-3">
-                        <label for="male">Male</label><input type="radio" name="gender" id="male" value="male"/>
-                        <label for="female">Female</label><input type="radio" name="gender" id="female" value="female"/>
-                        <label for="other">Other</label><input type="radio" name="gender" id="other" value="other"/>
+                        <label for="male">Male</label><input type="radio" name="gender" id="male" value="Male"/>
+                        <label for="female">Female</label><input type="radio" name="gender" id="female" value="Female"/>
+                        <label for="other">Other</label><input type="radio" name="gender" id="other" value="Other"/>
                     </td>
                 </tr>
                 <tr>
@@ -125,8 +134,8 @@ cursor:pointer;
                 <tr>
                     <td><label for="course">Course:</label></td>
                     <td><select name="course" >
-                        <option value="mca">Masters of Computer Application</option>
-                        <option value="msc_com">Masters of Computer Sc.</option>
+                        <option value="MCA">Masters of Computer Application</option>
+                        <option value="Msc. Computer">Masters of Computer Sc.</option>
                        </select></td>
                 </tr>
                 <tr>

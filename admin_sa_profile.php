@@ -48,140 +48,145 @@ $stud_reg_no=$_GET["stud_reg_no"];
 </head>
 <body>
 
-<!-- navbar start -->
+      <!-- navbar start -->
 
-      <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-         <div class="container-fluid ">
-
-            <a class="navbar-brand" href="#"><img src="<?php echo $baseurl; ?>website_pic\logo.png" alt="logo" width="10%"><span class="ml-5">UNIVERSITY OF NORTH BENGAL</span></a>
-      <!--for search box -->
-            <form class="d-flex">
-               <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-               <button class="btn btn-outline-dark my-sm-0 bg-primary text-dark" type="submit">Search</button>
-            </form>
-      
-      <!--end search option  -->
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-               <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="collapsibleNavbar">
-               <ul class="navbar-nav ml-auto">
-                  <li class="nav-item active">
-                     <a class="navbar-brand" href="<?php echo $baseurl; ?>index.php">Home</a>
-                  </li>
-                  <li class="nav-item">
-                     <a class="navbar-brand" href="#">About NBU</a>
-                  </li>
-                  <li class="nav-item">
-                     <a class="navbar-brand" href="#">Change Password</a>
-                  </li> 
-                  <li class="nav-item">
-                     <a class="navbar-brand" href="#">Log Out</a>
-                  </li>    
-                  
-               </ul>
-            </div>  
+      <div class="wrapper">
+         <header class="header">
+            <div class="topbar bg-dark">
+               <a class="navbar-brand ml-2 " href="#"><img class="d-inline-block align-top" src="<?php echo $baseurl; ?>website_pic\logo.png" alt="logo" width="10%"><span class="ml-5 text-light font-weight-bolder">University of North Bengal</span></a>
+     <!--  <input  type="search" placeholder="Search">
+      <span class="fa fa-search"></span> -->
+     </header>
+   </div>
+   <nav class="navbar navbar-expand-md navbar-light sticky-top" style="background-color: rgba(194, 194, 214, 0.8);">
+      <div class="container" >
+         <div class="mr-auto">
+            <input  type="search" placeholder="Search">
+            <button class="btn-sm btn-outline-dark my-sm-0 bg-primary text-light ml-2" type="submit">Search</button>
          </div>
-         </nav>
+         <!-- <span class="fa fa-search"></span> -->
+
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon "></span>
+         </button>
+         <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav font-weight-bold ml-auto ">
+               <li class="nav-item active">
+                  <a class="nav-link " href="<?php echo $baseurl; ?>index.php">Home</a>
+               </li>
+               <li class="nav-item active">
+                  <a class="nav-link " href="#">About NBU</a>
+               </li>
+               <li class="nav-item active">
+                  <a class="nav-link " href="#">Change Password</a>
+               </li> 
+               <li class="nav-item active" >
+                  <a class="nav-link" href="#">Log Out</a>
+               </li>    
+
+            </ul>
+         </div>
+      </div>
+   </nav>
 
          <!-- Navbar End -->
+<center><div class="table pt-2 pb-2 m-2">
+      <img class="rounded-circle" src="s_profile_pic/<?php echo $pic;?>" style="width:80px;height:100px;"><br><br>
 
-<div class="container" style="padding-top: 95px;">
-   <div class="field-set">
-      <img src="s_profile_pic/<?php echo $pic;?>" style="width:60px;height:80px;"><br>
-               <table class="font-weight-bold">
-                 <tr >
-               <td><label for="gender">Name:</label> 
-               <label><?php echo $name;?></label>
-               </td>
-               </tr>  
-               <tr >
-               <td><label for="gender">Gender:</label> 
-               <label><?php echo $gender;?></label>
-               </td>
-               </tr>
-               <tr>
-                  <td><label for="dob">Date of Birth:</label>
-                 <label><?php echo $dob;?></label>  
-              </td>
-               </tr>
-               <tr>
-                  <td><label for="reg_no">Registration No:</label>
-                 <label><?php echo $reg_no;?></label>  
-              </td>
-               </tr>
-               <tr>
-                  <td><label for="sessions">Session:</label>
-                 <label><?php echo $session;?></label>  
-              </td>
-               </tr>
-               <tr>
-                  <td><label for="course">Course:</label>
-                 <label><?php echo $course;?></label>  
-              </td>
-               </tr>
-               <tr>
-                  <td><label for="semester">Semester:</label>
-                 <label><?php echo $semester;?></label>  
-              </td>
-               </tr>
-               <tr>
-                  <td><label for="class_roll">Class Roll:</label>
-                 <label><?php echo $class_roll;?></label>  
-              </td>
-               </tr>
-               <tr>
-                  <td><label for="phn_no">Mobile No:</label>
-                 <label><?php echo $ph_no;?></label>  
-              </td>
-               </tr>
-               <tr>
-                  <td><label for="email">Email:</label>
-                 <label><?php echo $email;?></label>  
-              </td>
-               </tr>
-                </table> 
-               <a href="<?php echo $baseurl;?>controller/admin_sa_profile_approve.php?operation=1"><button class="btn btn-outline-success">Approve</button></a>
 
-   <button class="btn btn-outline-danger " onclick="reject.style.display='block'">Reject</button>
+ <table class="table table-bordered border border-primary w-25">
+
+    <tbody>
+      <tr>
+        <td><small><b>STUDENT'S NAME</b></small></td>
+        <td><small><?php echo $name; ?></small></td>
+      
+      </tr>
+      
+    </tbody>
+    <tbody>
+      <tr>
+        <td><small><b>REGISTRATION NO</b> </small></td>
+        <td><small><?php echo $reg_no; ?></small></td>
+      </tr>
+      
+    </tbody>
+    <tbody>
+      <tr>
+        <td><small><b> Session </b></small></td>
+        <td><small><?php echo $session; ?></small></td>
+      </tr>
+      
+    </tbody>
+    <tbody>
+      <tr>
+        <td><small><b>Gender</b></small></td>
+        <td><small><?php echo $gender; ?></small></td>
+      </tr>
+      
+    </tbody>
+    <tbody>
+      <tr>
+        <td><small><b>Date of birth</b></small></td>
+        <td><small><?php echo $dob; ?></small></td>
+      </tr>
+      
+    </tbody>
+    <tbody>
+      <tr>
+        <td><small><b> Course </b></small></td>
+        <td><small><?php echo $course; ?></small></td>
+      </tr>
+      
+    </tbody>
+    <tbody>
+      <tr>
+        <td><small><b> Semester </b></small></td>
+        <td><small><?php echo $semester; ?></small></td>
+      </tr>
+      
+    </tbody>
+    <tbody>
+      <tr>
+        <td><small><b> Class Roll </b></small></td>
+        <td><small><?php echo $class_roll; ?></small></td>
+      </tr>
+      
+    </tbody>
+    <tbody>
+      <tr>
+        <td><small><b> Mobile NO. </b></small></td>
+        <td><small><?php echo $ph_no; ?></small></td>
+      </tr>
+      
+    </tbody>
+    <tbody>
+      <tr>
+        <td><small><b> Email </b></small></td>
+        <td><small><?php echo $email; ?></small></td>
+      </tr>
+      
+    </tbody>
+   
+  </table>
+  
+      <small><a href="<?php echo $baseurl;?>controller/admin_sa_profile_approve.php?operation=1"><button class="btn btn-outline-success">Approve</button></a></small>
+
+        <small>
+           <button class="btn btn-outline-danger " onclick="reject.style.display='block'">Reject</button>
 
    <form id="reject" style="display: none;" method="post" action="<?php echo $baseurl;?>controller/admin_sa_profile_reject.php">
-      <input type="text" name="resone">
+      <br><input type="text" name="resone" class="form-control w-25" placeholder="Give some Resones">
       <button class="btn btn-outline-danger m-3 " type="submit" name="Reject">Submit</button> 
 
    </form>
+        </small>
+   
             
-          </div>
-       </div>
-<!--    <img src="s_profile_pic/<?php echo $pic;?>" style="width:60px;height:80px;"><br>
-   <p><?php echo $gender;?></p><br>
-   <p><?php echo $dob;?></p><br>
-   <p><?php echo $reg_no;?></p><br>
-   <p><?php echo $session;?></p><br>
-   <p><?php echo $course;?></p><br>
- -->
-   <!-- end of part 1 -->
-
-<!--    <p><?php echo $semester;?></p><br>
-   <p><?php echo $class_roll;?></p><br>
-  <p><?php echo $ph_no;?></p><br>
- -->
-   <!-- end of part 2 -->
-
-   <!-- <p><?php echo $email;?></p><br>
-
-   <a href="<?php echo $baseurl;?>controller/admin_sa_profile_approve.php?operation=1"><button>Approve</button></a>
-
-   <button onclick="reject.style.display='block'">Reject</button>
-
-   <form id="reject" style="display: none;" method="post" action="<?php echo $baseurl;?>controller/admin_sa_profile_reject.php">
-      <input type="text" name="resone">
-      <input type="submit" name="Reject">
-
-   </form> -->
+          </div></center>
 
 <!-- Footer -->
-<footer class="page-footer font-small bg-dark" style="margin-top:85%">
+<footer class="page-footer font-small bg-dark">
 
    <!-- Copyright -->
    <div class="footer-copyright text-center py-3 text-white">© 2021 Copyright:

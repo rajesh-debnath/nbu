@@ -2,6 +2,7 @@
 include 'controller/connection.php';
 include 'controller/baseurlconfig.php';
 $verify=0;
+$msg="";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
     $ad_username=filter_var($_POST['ad_username'], FILTER_SANITIZE_STRING);
@@ -23,7 +24,7 @@ if ($verify>0) {
 
 }
 else{
-   echo "not ok";
+   $msg="Wrong Username or Password";
 	}
 
 }
@@ -60,38 +61,39 @@ else{
 	  </style>
 </head>
 <body>
-	<!-- navbar start -->
+			<!-- navbar start -->
 
-		<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-			<div class="container-fluid">
-			
-			 <a class="navbar-brand" href="#"><img src="<?php echo $baseurl; ?>website_pic\logo.png" alt="logo" width="10%"><span class="ml-5">UNIVERSITY OF NORTH BENGAL</span></a>
-	<!--for search box -->
-			<form class="d-flex ml-10">
-      <input class="form-control mr-sm-2 flex-row-reverse" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-dark my-sm-0 bg-primary text-dark" type="submit">Search</button>
-    	</form>
-		<!--end search option  -->
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="collapsibleNavbar">
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item active">
-        <a class="navbar-brand" href="<?php echo $baseurl; ?>index.php">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="navbar-brand" href="#">About NBU</a>
-      </li>
-      <li class="nav-item">
-        <a class="navbar-brand" href="#">Contact Us</a>
-      </li>
+		<div class="wrapper">
+			<header class="header">
+				<div class="topbar bg-dark">
+					<a class="navbar-brand ml-2 " href="#"><img class="d-inline-block align-top" src="<?php echo $baseurl; ?>website_pic\logo.png" alt="logo" width="10%"><span class="ml-5 text-light font-weight-bolder">University of North Bengal</span></a>
+     <!--  <input  type="search" placeholder="Search">
+     	<span class="fa fa-search"></span> -->
+     </header>
+   </div>
+   <nav class="navbar navbar-expand-md navbar-light sticky-top" style="background-color: rgba(194, 194, 214, 0.8);">
+   	<div class="container" >
+   		<div class="mr-auto">
+   			<input  type="search" placeholder="Search">
+   			<button class="btn-sm btn-outline-dark my-sm-0 bg-primary text-light ml-2" type="submit">Search</button>
+   		</div>
+   		<!-- <span class="fa fa-search"></span> -->
 
-      
-    </ul>
-  </div>  
- </div>  
-</nav>
+   		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+   			<span class="navbar-toggler-icon "></span>
+   		</button>
+   		<div class="collapse navbar-collapse" id="collapsibleNavbar">
+   			<ul class="navbar-nav font-weight-bold ml-auto ">
+   				<li class="nav-item active">
+   					<a class="nav-link " href="<?php echo $baseurl; ?>index.php">Home</a>
+   				</li>
+   				<li class="nav-item active">
+   					<a class="nav-link " href="#">About NBU</a>
+   				</li>    
+   			</ul>
+   		</div>
+   	</div>
+   </nav>
 <!-- Navbar End -->
 
 
@@ -107,6 +109,7 @@ else{
 	<form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" class="col-12">
 
 		<div class="form-group mb-4 mt-2">
+			<p class="small text-danger"><?php echo $msg; ?></p>
 		<table class="table table-borderless">
 			<tr >
 				<td><i class="fas fa-user fa-2x pt-2"></i><input type="text" class="form-control pl-5" name="ad_username" placeholder="Enter Username"></td>
@@ -128,7 +131,7 @@ else{
 
 <!--Modal End -->
 <!-- Footer -->
-	<footer class="page-footer font-small bg-dark" style="margin-top:40%">
+	<footer class="page-footer font-small bg-dark">
 
 	  <!-- Copyright -->
 	  <div class="footer-copyright text-center py-3 text-white">© 2021 Copyright:
