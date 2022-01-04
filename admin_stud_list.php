@@ -77,12 +77,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 
 
   	<table class="table table-bordered" >
-  		<thead class="bg-success">
+  		<thead class="bg-success text-center">
   			<tr>
   				<th class="text-light">Student Name</th>
-  				<th class="text-light">Reg. NO</th>
+  				<th class="text-light">Registration Number</th>
   				<th class="text-light">Course</th>
-  				<th class="text-light">session</th>
+  				<th class="text-light">Session</th>
   				<th class="text-light">Action</th>
 
   			</tr>

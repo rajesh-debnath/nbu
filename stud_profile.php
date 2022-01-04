@@ -108,50 +108,135 @@ if($_SESSION['verified'] == 1){
 	<?php }
 	elseif ($_SESSION['verified'] == 1 && $_SESSION['userName'] != 'rejected') {
 	?>
-	
-	<div class="container" style="padding-top: 95px; ">
-    <div class="field-set">
-    <img src="s_profile_pic/<?php echo $row1['sa_profile_pic'];?>" style="width:60px;height:80px;"><br>
+	<center><div class="table pt-2 pb-2 m-2">
+      <img class="rounded-circle" src="s_profile_pic/<?php echo $row1['sa_profile_pic'];?>" style="width:100px;height:100px;"><br><br>
 
-	<label>Name: <?php echo $row1['sa_name'];?></label><br>
-   <label>Gender: <?php echo $row1['sa_gender'];?></label><br>
-  <label>Date of Birth: <?php echo $row1['sa_dob'];?></label><br>
-   <label>Registration No: <?php echo $row1['sa_reg_no'];?></label><br>
-   <label>Session: <?php echo $row1['sa_session'];?></label><br>
-   <label>Course: <?php echo $row1['sa_course'];?></label><br>
 
-   <!-- end of part 1 -->
+ <table class="table table-bordered border border-primary w-25">
 
-	<label>Semester: <?php echo $row1['sa_semester'];?></label>
-	<br>
-	<label>Class Roll:<?php echo $row1['sa_class_roll'];?></label>
-	<br>
-	<label>Mobile No: <?php echo $row1['sa_phn_no'];?></label>
-	<br>
-	<label>Email: <?php echo $row1['sa_mail'];?></label><br>
-		<?php
+    <tbody>
+      <tr>
+        <td><small><b> Name</b></small></td>
+        <td><small><?php echo $row1['sa_name']; ?></small></td>
+      
+      </tr>
+      
+    </tbody>
+    <tbody>
+      <tr>
+        <td><small><b>Gender</b> </small></td>
+        <td><small><?php echo $row1['sa_gender'] ?></small></td>
+      </tr>
+      
+    </tbody>
+    <tbody>
+      <tr>
+        <td><small><b> Date of Birth </b></small></td>
+        <td><small><?php echo $row1['sa_dob']; ?></small></td>
+      </tr>
+      
+    </tbody>
+    <tbody>
+      <tr>
+        <td><small><b>Registration Number</b></small></td>
+        <td><small><?php echo $row1['sa_reg_no']; ?></small></td>
+      </tr>
+      
+    </tbody>
+    <tbody>
+      <tr>
+        <td><small><b>Session</b></small></td>
+        <td><small><?php echo $row1['sa_session'];?></small></td>
+      </tr>
+      
+    </tbody>
+    <tbody>
+      <tr>
+        <td><small><b> Course </b></small></td>
+        <td><small><?php  echo $row1['sa_course'];?></small></td>
+      </tr>
+      
+    </tbody>
+    <tbody>
+      <tr>
+        <td><small><b> Semester </b></small></td>
+        <td><small><?php echo $row1['sa_semester']; ?></small></td>
+      </tr>
+      
+    </tbody>
+    <tbody>
+      <tr>
+        <td><small><b> Class Roll </b></small></td>
+        <td><small><?php echo $row1['sa_class_roll']; ?></small></td>
+      </tr>
+      
+    </tbody>
+    <tbody>
+      <tr>
+        <td><small><b> Mobile Number </b></small></td>
+        <td><small><?php echo $row1['sa_phn_no']; ?></small></td>
+      </tr>
+      
+    </tbody>
+    <tbody>
+      <tr>
+      	
+        <td><small><b> Email </b></small></td>
+        <td><small><?php echo $row1['sa_mail']; ?></small></td>
+      </tr>
+      
+    </tbody>
+        <tbody>
+      <tr>
+      	<?php
 		if ($row2['sp_f_name'] != "") { ?>
-			<label><?php echo $row2['sp_f_name'];?></label><br>
-		<?php }
+        <td><small><b> Father's Name </b></small></td>
+        <td><small><?php echo $row2['sp_f_name']; ?></small></td>
+      </tr>
+      
+    </tbody>
+        <tbody>
+      <tr>
+      	<?php }
 		if ($row2['sp_m_name'] != "") { ?>
-			<label><?php echo $row2['sp_m_name'];?></label><br>
-		<?php }
+        <td><small><b> Mother's Name </b></small></td>
+        <td><small><?php echo $row2['sp_m_name'];?></small></td>
+      </tr>
+      
+    </tbody>
+        <tbody>
+      <tr>
+      	<?php }
 		if ($row2['sp_status'] != "") { ?>
-			<label><?php echo $row2['sp_status'];?></label><br>
-		<?php }
+        <td><small><b> Status </b></small></td>
+        <td><small><?php echo $row2['sp_status']; ?></small></td>
+      </tr>
+      
+    </tbody>
+    <tbody>
+    	<?php }
 		if ($row2['sp_add'] != "") { ?>
-			<textarea rows="4" cols="50" name="add" readonly><?php echo $row2['sp_add'];?> </textarea><br> 
-		<?php } ?>
-		<a href="stud_about.php">change about</a>
-
-	</div>
+			<td><textarea rows="4" cols="25" name="add" readonly><?php echo $row2['sp_add'];?> </textarea></td>
+			<?php } ?>
+		<td><a href="stud_about.php">change about</a></td>
+    </tbody>
+  </table>
 </div>
-	<?php }
+</center>    
+ <?php }
 	else{
 	?>
 	<div><p>something went wrong</p></div>
-	<?php } ?>
+	<?php } ?>        
+     
 
 
-</body>
+
+
+
+
+
+ </body>
 </html>
+
+		

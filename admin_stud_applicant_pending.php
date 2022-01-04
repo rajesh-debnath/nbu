@@ -28,7 +28,6 @@ if($_SESSION['ad_username'] == "" || !isset($_SESSION['ad_username']))
    <body>
       <!-- navbar start -->
 
-      <!-- navbar start -->
 
       <div class="wrapper">
          <header class="header">
@@ -74,10 +73,10 @@ if($_SESSION['ad_username'] == "" || !isset($_SESSION['ad_username']))
 
 
    <table class="table table-bordered" >
-     <thead class="table table-dark">
+     <thead class="table table-dark text-center">
       <tr>
         <th class="text-light">Student Name</th>
-        <th class="text-light">Reg. NO</th>
+        <th class="text-light">Registration Number</th>
         <th class="text-light">Course</th>
         <th class="text-light">Action</th>
 

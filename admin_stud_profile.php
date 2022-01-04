@@ -94,8 +94,9 @@ $stud_id=$_GET["stud_id"];
       </div>
    </nav>
             <!-- Navbar End -->
+
 <center><div class="table pt-2 pb-2 m-2">
-      <img class="rounded-circle" src="s_profile_pic/<?php echo $pic;?>" style="width:80px;height:100px;"><br><br>
+      <img class="rounded-circle" src="s_profile_pic/<?php echo $pic;?>" style="width:100px;height:100px;"><br><br>
 
 
  <table class="table table-bordered border border-primary w-25">
