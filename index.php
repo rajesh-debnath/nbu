@@ -5,6 +5,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>University of North Bengal</title>
+		<link rel = "icon" href = "<?php echo $baseurl; ?>website_pic\logo.png" type = "image/x-icon">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 	<!-- 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
 	      rel="stylesheet"> -->
@@ -57,14 +58,14 @@
    		</button>
    		<div class="collapse navbar-collapse" id="collapsibleNavbar">
    			<ul class="navbar-nav font-weight-bold ml-auto ">
-   				<li class="nav-item active">
+   				<li class="nav-item">
    					<a class="nav-link " href="<?php echo $baseurl; ?>index.php">Home</a>
    				</li>
-   				<li class="nav-item active">
-   					<a class="nav-link " href="#">About NBU</a>
+   				<li class="nav-item">
+   					<a class="nav-link " href="https://www.nbu.ac.in/">About NBU</a>
    				</li>
-   				<li class="nav-item active">
-   					<a class="nav-link " href="#">Contact Us</a>
+   				<li class="nav-item">
+   					<a class="nav-link " href="https://www.nbu.ac.in/cus/TelephoneDirectory.aspx">Contact Us</a>
    				</li>    
 
    			</ul>

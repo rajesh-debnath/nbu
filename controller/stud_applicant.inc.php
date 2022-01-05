@@ -1,4 +1,5 @@
 <?php  
+include "connection.php";
 if (isset($_POST["submit"])){
 	$name = filter_var($_POST["name"], FILTER_SANITIZE_STRING);
 	$reg = filter_var($_POST["reg_no"], FILTER_SANITIZE_STRING);
@@ -19,7 +20,20 @@ if (isset($_POST["submit"])){
     $pic = filter_var($pic, FILTER_SANITIZE_STRING);
 
 
-	include "connection.php";
+
+
+
+$verify=0;
+
+$sql = "SELECT * FROM stud_applicant WHERE sa_reg_no='".$reg."'";
+$result = mysqli_query($conn, $sql);
+    while($sa_reg = mysqli_fetch_array($result)) {
+
+      if ($reg==$sa_reg["sa_reg_no"]) {
+         $verify++;
+      }
+   }
+
 
 
 
@@ -29,7 +43,15 @@ if (isset($_POST["submit"])){
 		header("location: ../stud_applicant.php?error=emptyinput");
 		exit();
 	}
-	elseif ($_FILES["pic"]["size"] > 500000) {
+
+	elseif ($verify>0) {
+		header("location: ../stud_applicant.php?error=regexist");
+		exit();
+	}
+
+
+
+	elseif ($_FILES["pic"]["size"] > 200000) {
 		header("location: ../stud_applicant.php?error=imgwrongsize");
 		exit();
     }

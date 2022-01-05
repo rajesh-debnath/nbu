@@ -37,6 +37,7 @@ else{
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Admin Login</title>
+	<link rel = "icon" href = "<?php echo $baseurl; ?>website_pic\logo.png" type = "image/x-icon">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 	<!-- 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
 	      rel="stylesheet"> -->
@@ -84,12 +85,16 @@ else{
    		</button>
    		<div class="collapse navbar-collapse" id="collapsibleNavbar">
    			<ul class="navbar-nav font-weight-bold ml-auto ">
-   				<li class="nav-item active">
+   				<li class="nav-item">
    					<a class="nav-link " href="<?php echo $baseurl; ?>index.php">Home</a>
    				</li>
-   				<li class="nav-item active">
-   					<a class="nav-link " href="#">About NBU</a>
+   				<li class="nav-item">
+   					<a class="nav-link " href="https://www.nbu.ac.in/">About NBU</a>
+   				</li>
+   				<li class="nav-item">
+   					<a class="nav-link " href="https://www.nbu.ac.in/cus/TelephoneDirectory.aspx">Contact Us</a>
    				</li>    
+
    			</ul>
    		</div>
    	</div>
@@ -122,9 +127,7 @@ else{
 		
 		<input type="submit" value="Login" id="ad_btn" name="ad_submit" class="btn-outline-danger rounded w-50">
 	</form>
-			<div class="col-12 forgot mt-3">
-				<a href="#">Forgot Password?</a>
-			</div>	
+			
 		</div>
 	</div>
 </div>

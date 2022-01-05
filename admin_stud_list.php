@@ -9,10 +9,14 @@ if($_SESSION['ad_username'] == "" || !isset($_SESSION['ad_username']))
 	header("Location:".$baseurl."admin_login.php");
 }
 
-if ($_SERVER["REQUEST_METHOD"] == "POST"){
+if (isset($_POST["ad_stud_submit"])){
 	$sessions = filter_var($_POST["sessions"], FILTER_SANITIZE_STRING);
 	$course = filter_var($_POST["course"], FILTER_SANITIZE_STRING);
+}  
+else{
+  header("Location:".$baseurl."admin_search_stud.php");
 }
+
 
 ?>
 <!DOCTYPE html>
@@ -20,7 +24,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Student Applicant Pending</title>
+	<title>Students List</title>
+  <link rel = "icon" href = "<?php echo $baseurl; ?>website_pic\logo.png" type = "image/x-icon">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
    <!--  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
    	rel="stylesheet"> -->
@@ -54,20 +59,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
   		</button>
   		<div class="collapse navbar-collapse" id="collapsibleNavbar">
   			<ul class="navbar-nav font-weight-bold ml-auto ">
-  				<li class="nav-item active">
-  					<a class="nav-link " href="<?php echo $baseurl; ?>index.php">Home</a>
-  				</li>
-  				<li class="nav-item active">
-  					<a class="nav-link " href="#">About NBU</a>
-  				</li>
-  				<li class="nav-item active">
-  					<a class="nav-link " href="#">Change Password</a>
-  				</li> 
-  				<li class="nav-item active" >
-  					<a class="nav-link" href="#">Log Out</a>
-  				</li>    
+          <li class="nav-item">
+            <a class="nav-link " href="<?php echo $baseurl; ?>index.php">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="https://www.nbu.ac.in/">About NBU</a>
+          </li>
+          <li class="nav-item" >
+            <a class="nav-link" href="<?php echo $baseurl;?>controller/logout.php">Log Out</a>
+          </li>    
 
-  			</ul>
+        </ul>
   		</div>
   	</div>
   </nav>
@@ -92,6 +94,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
   		$result = mysqli_query($conn, $sql);
 
   		while($stud_list = mysqli_fetch_array($result)) { 
+
   			?>
 
   			<tbody>

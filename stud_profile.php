@@ -1,5 +1,5 @@
-<?php include 'controller/baseurlconfig.php'; ?>
-<?php
+<?php include 'controller/baseurlconfig.php';
+
 session_start();
 include "controller/connection.php";
 if(!isset($_SESSION['userId'])){
@@ -43,7 +43,8 @@ if($_SESSION['verified'] == 1){
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>profile</title>
+	<title>Student Profile</title>
+  <link rel = "icon" href = "<?php echo $baseurl; ?>website_pic\logo.png" type = "image/x-icon">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 	<!-- 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
 	      rel="stylesheet"> -->
@@ -75,20 +76,17 @@ if($_SESSION['verified'] == 1){
    		</button>
    		<div class="collapse navbar-collapse" id="collapsibleNavbar">
    			<ul class="navbar-nav font-weight-bold ml-auto ">
-   				<li class="nav-item active">
-   					<a class="nav-link " href="<?php echo $baseurl; ?>index.php">Home</a>
-   				</li>
-   				<li class="nav-item active">
-   					<a class="nav-link " href="#">About NBU</a>
-   				</li>
-   				<li class="nav-item active">
-   					<a class="nav-link " href="#">Change Password</a>
-   				</li> 
-   				<li class="nav-item active" >
-   					<a class="nav-link" href="#">Log Out</a>
-   				</li>    
+          <li class="nav-item">
+            <a class="nav-link " href="<?php echo $baseurl; ?>index.php">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="https://www.nbu.ac.in/">About NBU</a>
+          </li>
+          <li class="nav-item" >
+            <a class="nav-link" href="<?php echo $baseurl;?>controller/logout.php">Log Out</a>
+          </li>    
 
-   			</ul>
+        </ul>
    		</div>
    	</div>
    </nav>
@@ -97,22 +95,25 @@ if($_SESSION['verified'] == 1){
 	<?php  
 	if($_SESSION['verified'] == 0 && $_SESSION['userName'] != 'rejected'){
 	?>
-	<div><p>your profile is under verifying process</p>
-		<p>wait for 48 hrs or contact the office</p></div>
+	<center><div class="container m-4 border border-primary w-50">
+    <p class="text-primary">Your profile is under verifying process<br>
+		Wait for 48 hrs or contact the office</p>
+  </div></center>
 	<?php }
 	elseif ($_SESSION['userName'] == 'rejected') {
 	?>
-	<div><p>Your profile is rejected for</p></div>
-	<div><p><?php echo $_SESSION['reason']; ?></p></div>
+	<center><div class="container m-4 border border-danger w-50">
+    <p class="text-danger">Your profile is rejected for<br>"
+  <?php echo $_SESSION['reason']; ?>"</p></div></center>
 	
 	<?php }
 	elseif ($_SESSION['verified'] == 1 && $_SESSION['userName'] != 'rejected') {
 	?>
-	<center><div class="table pt-2 pb-2 m-2">
+	<center><div class="table-responsive-sm pt-2 pb-2 m-2">
       <img class="rounded-circle" src="s_profile_pic/<?php echo $row1['sa_profile_pic'];?>" style="width:100px;height:100px;"><br><br>
 
 
- <table class="table table-bordered border border-primary w-25">
+  <table class="table table-bordered w-25">
 
     <tbody>
       <tr>
@@ -188,8 +189,7 @@ if($_SESSION['verified'] == 1){
     </tbody>
         <tbody>
       <tr>
-      	<?php
-		if ($row2['sp_f_name'] != "") { ?>
+      	
         <td><small><b> Father's Name </b></small></td>
         <td><small><?php echo $row2['sp_f_name']; ?></small></td>
       </tr>
@@ -197,42 +197,46 @@ if($_SESSION['verified'] == 1){
     </tbody>
         <tbody>
       <tr>
-      	<?php }
-		if ($row2['sp_m_name'] != "") { ?>
+      	
         <td><small><b> Mother's Name </b></small></td>
         <td><small><?php echo $row2['sp_m_name'];?></small></td>
       </tr>
       
     </tbody>
         <tbody>
-      <tr>
-      	<?php }
-		if ($row2['sp_status'] != "") { ?>
-        <td><small><b> Status </b></small></td>
-        <td><small><?php echo $row2['sp_status']; ?></small></td>
-      </tr>
+     
       
     </tbody>
     <tbody>
-    	<?php }
-		if ($row2['sp_add'] != "") { ?>
-			<td><textarea rows="4" cols="25" name="add" readonly><?php echo $row2['sp_add'];?> </textarea></td>
+    	 <td><small><b> Address </b></small></td>
+			<td><small><?php echo $row2['sp_add'];?> </small></td>
 			<?php } ?>
-		<td><a href="stud_about.php">change about</a></td>
+		
     </tbody>
   </table>
+  <small><a href="<?php echo $baseurl;?>stud_update_profile.php">
+    <button class="btn btn-outline-success">Update Profile</button>
+</a>
+</small>
 </div>
 </center>    
- <?php }
-	else{
-	?>
-	<div><p>something went wrong</p></div>
-	<?php } ?>        
+ 
+	      
      
 
 
 
+<!-- Footer -->
+<footer class="page-footer font-small bg-dark">
 
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3 text-white">© 2021 Copyright:
+
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
 
 
 

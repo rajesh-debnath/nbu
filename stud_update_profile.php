@@ -1,38 +1,23 @@
 <?php include 'controller/baseurlconfig.php'; ?>
-<?php session_start();
-include 'controller/connection.php';
-include 'controller/baseurlconfig.php';
-
-if($_SESSION['ad_username'] == "" || !isset($_SESSION['ad_username'])) 
-{
- header("Location:".$baseurl."admin_login.php");
+<?php  
+session_start();
+include "controller/connection.php";
+if(!isset($_SESSION['userId'])){
+	header("location:".$baseurl." stud_login.php");
 }
-$stud_id=$_GET["stud_id"];
-
-
-$sql = "SELECT stud_applicant.*,stud_profile.* FROM stud_applicant,stud_profile WHERE stud_applicant.sa_reg_no = '".$stud_id."' AND stud_applicant.sa_reg_no=stud_profile.sp_reg_no";
+$sql = "SELECT stud_applicant.*,stud_profile.* FROM stud_applicant,stud_profile WHERE stud_applicant.sa_reg_no = '".$_SESSION['userId']."' AND stud_applicant.sa_reg_no=stud_profile.sp_reg_no";
 $result = mysqli_query($conn, $sql);
 
 while($stud_profile = mysqli_fetch_array($result)) { 
 
-    $pic=$stud_profile['sa_profile_pic'];
-    $name=$stud_profile['sa_name'];
-    $gender=$stud_profile['sa_gender'];
-    $dob=$stud_profile['sa_dob'];
-    $reg_no=$stud_profile['sa_reg_no'];
-    $session=$stud_profile['sa_session'];
-    $course=$stud_profile['sa_course'];
-    $semester=$stud_profile['sa_semester'];
-    $class_roll=$stud_profile['sa_class_roll'];
+
     $ph_no=$stud_profile['sa_phn_no'];
     $email=$stud_profile['sa_mail'];
-    $pass=$stud_profile['sa_pwd'];
     $father=$stud_profile['sp_f_name'];
     $mother=$stud_profile['sp_m_name'];
     $address=$stud_profile['sp_add'];
     
 }
-
 
 ?>
 <!DOCTYPE html>
@@ -40,13 +25,14 @@ while($stud_profile = mysqli_fetch_array($result)) {
 <head>
  <meta charset="utf-8">
  <meta name="viewport" content="width=device-width, initial-scale=1">
- <title>Admin View Student Profile</title>
+ <title>Student Profile Update</title>
  <link rel = "icon" href = "<?php echo $baseurl; ?>website_pic\logo.png" type = "image/x-icon">
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
    
        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+       <script type="text/javascript" src="<?php echo $baseurl; ?>js/sp_update.js"></script>
    </head>
    <body>
 
@@ -92,107 +78,56 @@ while($stud_profile = mysqli_fetch_array($result)) {
 <!-- Navbar End -->
 
 <center><div class="table-responsive-sm pt-2 pb-2 m-2">
-  <img class="rounded-circle" src="s_profile_pic/<?php echo $pic;?>" style="width:100px;height:100px;"><br><br>
+ 
+<form method="post" action="controller/stud_update_profile_inc.php">
 
+  <table class="table table-bordered w-50">
 
-  <table class="table table-bordered w-25">
-
-    <tbody>
-      <tr>
-        <td><small><b>STUDENT'S NAME</b></small></td>
-        <td><small><?php echo $name; ?></small></td>
-        
-    </tr>
     
-</tbody>
-<tbody>
-  <tr>
-    <td><small><b>REGISTRATION NO</b> </small></td>
-    <td><small><?php echo $reg_no; ?></small></td>
-</tr>
-
-</tbody>
-<tbody>
-  <tr>
-    <td><small><b> Session </b></small></td>
-    <td><small><?php echo $session; ?></small></td>
-</tr>
-
-</tbody>
-<tbody>
-  <tr>
-    <td><small><b>Gender</b></small></td>
-    <td><small><?php echo $gender; ?></small></td>
-</tr>
-
-</tbody>
-<tbody>
-  <tr>
-    <td><small><b>Date of birth</b></small></td>
-    <td><small><?php echo $dob; ?></small></td>
-</tr>
-
-</tbody>
-<tbody>
-  <tr>
-    <td><small><b> Course </b></small></td>
-    <td><small><?php echo $course; ?></small></td>
-</tr>
-
-</tbody>
-<tbody>
-  <tr>
-    <td><small><b> Semester </b></small></td>
-    <td><small><?php echo $semester; ?></small></td>
-</tr>
-
-</tbody>
-<tbody>
-  <tr>
-    <td><small><b> Class Roll </b></small></td>
-    <td><small><?php echo $class_roll; ?></small></td>
-</tr>
-
-</tbody>
 <tbody>
   <tr>
     <td><small><b> Father's Name </b></small></td>
-    <td><small><?php echo $father; ?></small></td>
+    <td><small><input type="text" id="father" name="father" value="<?php echo $father; ?>" placeholder="Enter Father's Name(Max:30 Charecters)"></small>
+    	<p id="e_father" class="text-danger small"></p></td>
 </tr>
 
 </tbody>
 <tbody>
   <tr>
     <td><small><b> Mother's Name </b></small></td>
-    <td><small><?php echo $mother; ?></small></td>
+    <td><small><input type="text" id="mother" name="mother" value="<?php echo $mother; ?>" placeholder="Enter Mother's Name(Max:30 Charecters)"></small>
+    <p id="e_mother" class="text-danger small"></p></td>
 </tr>
 
 </tbody>
 <tbody>
   <tr>
     <td><small><b> Address </b></small></td>
-    <td><small><?php echo $address; ?></small></td>
+    <td><small><textarea type="text" id="address" name="add" value="<?php echo $address; ?>" placeholder="Enter Address(Max:100 Charecters)"></textarea></small>
+    <p id="e_address" class="text-danger small"></p></td>
 </tr>
 
 </tbody>
 <tbody>
   <tr>
     <td><small><b> Mobile NO. </b></small></td>
-    <td><small><?php echo $ph_no; ?></small></td>
+    <td><small><input type="text" id="mobile" name="phn_no" value="<?php echo $ph_no; ?>" placeholder="Enter 10 digit mobile No."></small>
+    <p id="e_mobile" class="text-danger small"></p></td>
 </tr>
 
 </tbody>
 <tbody>
   <tr>
     <td><small><b> Email </b></small></td>
-    <td><small><?php echo $email; ?></small></td>
+    <td><small><input type="text" id="email" name="mail" value="<?php echo $email; ?>" placeholder="Enter Email(e.g.: example@abc.com)"></small>
+    	<p id="e_email" class="text-danger small"></p></td>
 </tr>
 
 </tbody>
 
 </table>
-
-
+<button type="button" id="submit" class="btn btn-outline-success mx-3"  name="button" onclick="validateForm()">Update</button>
+</form>
 </div>
 </center>
 

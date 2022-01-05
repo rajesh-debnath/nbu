@@ -1,10 +1,36 @@
-<?php include 'controller/baseurlconfig.php'; ?>
+<?php include 'controller/baseurlconfig.php'; 
+
+ $result="";
+ if (isset($_GET["result"])) {
+ 	if ($_GET["result"] == "applicationtaken") {
+ 		$result = "*Registered successfully!";
+ 	}
+ }
+ else{
+ 	$msg = " ";
+ }
+ $msg="";
+ if (isset($_GET["error"])) {
+ 	if ($_GET["error"] == "wronglogin" || $_GET["error"] =="emptyinput") {
+ 		$msg = "*Wrong Registration no. or Password";
+ 	}
+ }
+ else{
+ 	$msg = " ";
+ }
+
+
+
+
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>student login</title>
+	<title>Student Login</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel = "icon" href = "<?php echo $baseurl; ?>website_pic\logo.png" type = "image/x-icon">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 	<!-- 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
 	      rel="stylesheet"> -->
@@ -47,26 +73,20 @@
    			<span class="navbar-toggler-icon "></span>
    		</button>
    		<div class="collapse navbar-collapse" id="collapsibleNavbar">
-   			<ul class="navbar-nav font-weight-bold ml-auto ">
-   				<li class="nav-item active">
-   					<a class="nav-link " href="<?php echo $baseurl; ?>index.php">Home</a>
-   				</li>
-   				<li class="nav-item active">
-   					<a class="nav-link " href="#">About NBU</a>
-   				</li>
-   				<li class="nav-item active">
-   					<a class="nav-link " href="#">Change Password</a>
-   				</li> 
-   				<li class="nav-item active" >
-   					<a class="nav-link" href="#">Log Out</a>
-   				</li>    
+   			 <ul class="navbar-nav font-weight-bold ml-auto ">
+                <li class="nav-item">
+                    <a class="nav-link " href="<?php echo $baseurl; ?>index.php">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="https://www.nbu.ac.in/">About NBU</a>
+                </li>   
 
-   			</ul>
+            </ul>
    		</div>
    	</div>
    </nav>
 <!-- Navbar End -->
-
+ <center><p class="text-success m-2" name="error"> <?php echo $result; ?></p></center>
 <!--Modal start -->
 <div class="modal-dialog modal-dialog-centered text-center modal-lg">
 		<div class="col-sm-8 main-section ">
@@ -80,6 +100,7 @@
 	<form action="controller/stud_login.inc.php" method="post" class="col-12">
 
 	<div class="form-group mb-4 mt-2">
+		<p class="small text-danger"><?php echo $msg; ?></p>
 		<table class="table table-borderless">
 			<tr >
 				<td class="font-weight-bolder"><label>Registration Number:</label></td>
@@ -94,9 +115,7 @@
 	<input type="submit" name="login" value="Login" id="stud_btn"class="btn-outline-success rounded w-50">
 	 
 	</form>
-	<div class="col-12 forgot mt-2">
-				<a href="#">Forgot Password?</a>
-			</div>	
+		
 			<p class="link pt-2 font-weight-bold text-center">Dont't Have register? <a href="<?php echo $baseurl; ?>stud_applicant.php">New User</a></p>
 		</div>
 	</div>

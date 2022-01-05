@@ -4,7 +4,7 @@ include "connection.php";
 if(!isset($_SESSION['userId'])){
 	header("location: stud_login.php");
 }
-if (isset($_POST['change'])) {
+if (isset($_POST['submit'])) {
 	$ph_no = filter_var($_POST["phn_no"], FILTER_SANITIZE_STRING);
 	$mail = filter_var($_POST["mail"], FILTER_SANITIZE_STRING);
 	$father = filter_var($_POST["father"], FILTER_SANITIZE_STRING);

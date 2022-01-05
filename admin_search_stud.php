@@ -14,7 +14,8 @@ if($_SESSION['ad_username'] == "" || !isset($_SESSION['ad_username']))
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Admin Dashboard</title>
+	<title>Search Students</title>
+	<link rel = "icon" href = "<?php echo $baseurl; ?>website_pic\logo.png" type = "image/x-icon">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 	<!-- 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
 		rel="stylesheet"> -->
@@ -45,18 +46,15 @@ if($_SESSION['ad_username'] == "" || !isset($_SESSION['ad_username']))
   			<span class="navbar-toggler-icon "></span>
   		</button>
   		<div class="collapse navbar-collapse" id="collapsibleNavbar">
-  			<ul class="navbar-nav font-weight-bold ml-auto ">
-  				<li class="nav-item active">
+<ul class="navbar-nav font-weight-bold ml-auto ">
+  				<li class="nav-item">
   					<a class="nav-link " href="<?php echo $baseurl; ?>index.php">Home</a>
   				</li>
-  				<li class="nav-item active">
-  					<a class="nav-link " href="#">About NBU</a>
+  				<li class="nav-item">
+  					<a class="nav-link " href="https://www.nbu.ac.in/">About NBU</a>
   				</li>
-  				<li class="nav-item active">
-  					<a class="nav-link " href="#">Change Password</a>
-  				</li> 
-  				<li class="nav-item active" >
-  					<a class="nav-link" href="#">Log Out</a>
+  				<li class="nav-item" >
+  					<a class="nav-link" href="<?php echo $baseurl;?>controller/logout.php">Log Out</a>
   				</li>    
 
   			</ul>
