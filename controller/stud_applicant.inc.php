@@ -25,11 +25,11 @@ if (isset($_POST["submit"])){
 
 $verify=0;
 
-$sql = "SELECT * FROM stud_applicant WHERE sa_reg_no='".$reg."'";
+$sql = "SELECT * FROM stud_profile WHERE sp_reg_no='".$reg."'";
 $result = mysqli_query($conn, $sql);
     while($sa_reg = mysqli_fetch_array($result)) {
 
-      if ($reg==$sa_reg["sa_reg_no"]) {
+      if ($reg==$sa_reg["sp_reg_no"]) {
          $verify++;
       }
    }
