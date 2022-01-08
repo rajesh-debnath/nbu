@@ -1,8 +1,8 @@
 
 
-function validateForm(){
+function validateform(){
   var father=document.getElementById("father").value;
-  if (father== "" || father.length>30) {
+  if (father.length>30) {
    document.getElementById("e_father").innerHTML="**Please, Fill Up properly";
    document.getElementById("father").focus();
    document.getElementById("father").style.border="2px solid red";
@@ -13,7 +13,7 @@ function validateForm(){
   document.getElementById("father").style.outline="none";
   document.getElementById("e_father").innerHTML="";
   var mother=document.getElementById("mother").value;
-  if (mother== "" || mother.length>30) {
+  if (mother.length>30) {
    document.getElementById("e_mother").innerHTML="**Please, Fill Up properly";
    document.getElementById("mother").focus();
    document.getElementById("mother").style.border="2px solid red";

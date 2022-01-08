@@ -32,7 +32,8 @@ while($stud_profile = mysqli_fetch_array($result)) {
        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-       <script type="text/javascript" src="<?php echo $baseurl; ?>js/sp_update.js"></script>
+       <script type="text/javascript" src="<?php echo $baseurl; ?>js/sp_updates.js"></script>
+       
    </head>
    <body>
 
@@ -81,13 +82,13 @@ while($stud_profile = mysqli_fetch_array($result)) {
  
 <form method="post" action="controller/stud_update_profile_inc.php">
 
-  <table class="table table-bordered w-50">
+  <table class="table table-bordered w-75">
 
     
 <tbody>
   <tr>
     <td><small><b> Father's Name </b></small></td>
-    <td><small><input type="text" id="father" name="father" value="<?php echo $father; ?>" placeholder="Enter Father's Name(Max:30 Charecters)"></small>
+    <td><small><input class="w-75" type="text" id="father" name="father" value="<?php echo $father; ?>" placeholder="Enter Father's Name(Max:30 Charecters)"></small>
     	<p id="e_father" class="text-danger small"></p></td>
 </tr>
 
@@ -95,7 +96,7 @@ while($stud_profile = mysqli_fetch_array($result)) {
 <tbody>
   <tr>
     <td><small><b> Mother's Name </b></small></td>
-    <td><small><input type="text" id="mother" name="mother" value="<?php echo $mother; ?>" placeholder="Enter Mother's Name(Max:30 Charecters)"></small>
+    <td><small><input class="w-75" type="text" id="mother" name="mother" value="<?php echo $mother; ?>" placeholder="Enter Mother's Name(Max:30 Charecters)"></small>
     <p id="e_mother" class="text-danger small"></p></td>
 </tr>
 
@@ -103,7 +104,7 @@ while($stud_profile = mysqli_fetch_array($result)) {
 <tbody>
   <tr>
     <td><small><b> Address </b></small></td>
-    <td><small><textarea type="text" id="address" name="add" value="<?php echo $address; ?>" placeholder="Enter Address(Max:100 Charecters)"></textarea></small>
+    <td><small><textarea class="w-75" type="text" id="address" rows="3" name="add" placeholder="Enter Address(Max:100 Charecters)"><?php echo $address; ?></textarea></small>
     <p id="e_address" class="text-danger small"></p></td>
 </tr>
 
@@ -111,7 +112,7 @@ while($stud_profile = mysqli_fetch_array($result)) {
 <tbody>
   <tr>
     <td><small><b> Mobile NO. </b></small></td>
-    <td><small><input type="text" id="mobile" name="phn_no" value="<?php echo $ph_no; ?>" placeholder="Enter 10 digit mobile No."></small>
+    <td><small><input class="w-75" type="text" id="mobile" name="phn_no" value="<?php echo $ph_no; ?>" placeholder="Enter 10 digit mobile No."></small>
     <p id="e_mobile" class="text-danger small"></p></td>
 </tr>
 
@@ -119,14 +120,14 @@ while($stud_profile = mysqli_fetch_array($result)) {
 <tbody>
   <tr>
     <td><small><b> Email </b></small></td>
-    <td><small><input type="text" id="email" name="mail" value="<?php echo $email; ?>" placeholder="Enter Email(e.g.: example@abc.com)"></small>
+    <td><small><input class="w-75" type="text" id="email" name="mail" value="<?php echo $email; ?>" placeholder="Enter Email(e.g.: example@abc.com)"></small>
     	<p id="e_email" class="text-danger small"></p></td>
 </tr>
 
 </tbody>
 
 </table>
-<button type="button" id="submit" class="btn btn-outline-success mx-3"  name="button" onclick="validateForm()">Update</button>
+<button type="button" id="submit" class="btn btn-outline-success mx-3"  name="button" onclick="validateform()">Update</button>
 </form>
 </div>
 </center>
