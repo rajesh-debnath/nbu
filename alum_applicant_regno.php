@@ -99,7 +99,7 @@ $reg=0;
 				if ($reg==0) { ?>
 			</table>
 			</div>	
-				<input type="submit" name="check" value="Ckeck" id="stud_btn"class="btn-outline-info rounded w-50">
+				<input type="submit" name="check" value="Check" id="stud_btn"class="btn-outline-info rounded w-50">
 				<?php }
 				else { ?>
 			<tr >
