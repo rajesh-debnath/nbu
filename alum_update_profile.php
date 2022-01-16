@@ -86,7 +86,7 @@ while($alum_profile = mysqli_fetch_array($result)) {
 <tbody>
   <tr>
     <td><small><b> Job </b></small></td>
-    <td><small><input type="text" id="job" name="job" value="<?php echo $job; ?>" placeholder="Enter job details(Max:100 Charecters)"></small>
+    <td><small><textarea type="text" id="job" name="job" placeholder="Enter job details(Max:100 Charecters)"><?php echo $job; ?></textarea></small>
     <p id="e_job" class="text-danger small"></p></td>
 </tr>
 
@@ -94,7 +94,7 @@ while($alum_profile = mysqli_fetch_array($result)) {
 <tbody>
   <tr>
     <td><small><b> Address </b></small></td>
-    <td><small><textarea type="text" id="address" name="add" value="<?php echo $address; ?>" placeholder="Enter Address(Max:100 Charecters)"></textarea></small>
+    <td><small><textarea type="text" id="address" name="add" placeholder="Enter Address(Max:100 Charecters)"><?php echo $address; ?></textarea></small>
     <p id="e_address" class="text-danger small"></p></td>
 </tr>
 
