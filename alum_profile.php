@@ -6,30 +6,30 @@ if(!isset($_SESSION['userId'])){
 	header("location: stud_login.php");
 }
 if($_SESSION['verified'] == 1){
-	$sql1 = "SELECT * FROM stud_applicant WHERE sa_reg_no = ?";
-		$sa_stmt = mysqli_stmt_init($conn);
-		if (!mysqli_stmt_prepare($sa_stmt, $sql1)) {
-		  header("location: ../stud_login.php?error=stmt1failed");
+	$sql1 = "SELECT * FROM alum_applicant WHERE al_reg_no = ?";
+		$al_stmt = mysqli_stmt_init($conn);
+		if (!mysqli_stmt_prepare($al_stmt, $sql1)) {
+		  header("location: ../alum_login.php?error=stmt1failed");
 		  exit();
 		}
 
-		mysqli_stmt_bind_param($sa_stmt, "s", $_SESSION['userId']);
-		mysqli_stmt_execute($sa_stmt);
+		mysqli_stmt_bind_param($al_stmt, "s", $_SESSION['userId']);
+		mysqli_stmt_execute($al_stmt);
 
-		$r_result = mysqli_stmt_get_result($sa_stmt);
+		$r_result = mysqli_stmt_get_result($al_stmt);
 		if (mysqli_num_rows($r_result) === 1) {
 			$row1 = mysqli_fetch_assoc($r_result);
-			$sql2 = "SELECT * FROM stud_profile WHERE sp_reg_no = ?";
-			$sp_stmt = mysqli_stmt_init($conn);
-			if (!mysqli_stmt_prepare($sp_stmt, $sql2)) {
-			  header("location: ../stud_login.php?error=stmt2failed");
+			$sql2 = "SELECT * FROM alum_profile WHERE alp_reg_no = ?";
+			$alp_stmt = mysqli_stmt_init($conn);
+			if (!mysqli_stmt_prepare($alp_stmt, $sql2)) {
+			  header("location: ../alum_login.php?error=stmt2failed");
 			  exit();
 			}
 
-			mysqli_stmt_bind_param($sp_stmt, "s", $row1['sa_reg_no']);
-			mysqli_stmt_execute($sp_stmt);
+			mysqli_stmt_bind_param($alp_stmt, "s", $row1['al_reg_no']);
+			mysqli_stmt_execute($alp_stmt);
 
-			$r_result = mysqli_stmt_get_result($sp_stmt);
+			$r_result = mysqli_stmt_get_result($alp_stmt);
 			if (mysqli_num_rows($r_result) === 1) {
 				$row2 = mysqli_fetch_assoc($r_result);
 			}
@@ -43,7 +43,7 @@ if($_SESSION['verified'] == 1){
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Student Profile</title>
+	<title>Alumni Profile</title>
   <link rel = "icon" href = "<?php echo $baseurl; ?>website_pic\logo.png" type = "image/x-icon">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 	<!-- 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
@@ -110,7 +110,7 @@ if($_SESSION['verified'] == 1){
 	elseif ($_SESSION['verified'] == 1 && $_SESSION['userName'] != 'rejected') {
 	?>
 	<center><div class="table-responsive-sm pt-2 pb-2 m-2">
-      <img class="rounded-circle" src="s_profile_pic/<?php echo $row1['sa_profile_pic'];?>" style="width:100px;height:100px;"><br><br>
+      <img class="rounded-circle" src="s_profile_pic/<?php echo $row1['al_profile_pic'];?>" style="width:100px;height:100px;"><br><br>
 
 
   <table class="table table-bordered w-25">
@@ -118,7 +118,7 @@ if($_SESSION['verified'] == 1){
     <tbody>
       <tr>
         <td><small><b> Name</b></small></td>
-        <td><small><?php echo $row1['sa_name']; ?></small></td>
+        <td><small><?php echo $row1['al_name']; ?></small></td>
       
       </tr>
       
@@ -126,56 +126,42 @@ if($_SESSION['verified'] == 1){
     <tbody>
       <tr>
         <td><small><b>Gender</b> </small></td>
-        <td><small><?php echo $row1['sa_gender'] ?></small></td>
+        <td><small><?php echo $row1['al_gender'] ?></small></td>
       </tr>
       
     </tbody>
     <tbody>
       <tr>
         <td><small><b> Date of Birth </b></small></td>
-        <td><small><?php echo $row1['sa_dob']; ?></small></td>
+        <td><small><?php echo $row1['al_dob']; ?></small></td>
       </tr>
       
     </tbody>
     <tbody>
       <tr>
         <td><small><b>Registration Number</b></small></td>
-        <td><small><?php echo $row1['sa_reg_no']; ?></small></td>
+        <td><small><?php echo $row1['al_reg_no']; ?></small></td>
       </tr>
       
     </tbody>
     <tbody>
       <tr>
         <td><small><b>Session</b></small></td>
-        <td><small><?php echo $row1['sa_session'];?></small></td>
+        <td><small><?php echo $row1['al_session'];?></small></td>
       </tr>
       
     </tbody>
     <tbody>
       <tr>
         <td><small><b> Course </b></small></td>
-        <td><small><?php  echo $row1['sa_course'];?></small></td>
-      </tr>
-      
-    </tbody>
-    <tbody>
-      <tr>
-        <td><small><b> Semester </b></small></td>
-        <td><small><?php echo $row1['sa_semester']; ?></small></td>
-      </tr>
-      
-    </tbody>
-    <tbody>
-      <tr>
-        <td><small><b> Class Roll </b></small></td>
-        <td><small><?php echo $row1['sa_class_roll']; ?></small></td>
+        <td><small><?php  echo $row1['al_course'];?></small></td>
       </tr>
       
     </tbody>
     <tbody>
       <tr>
         <td><small><b> Mobile Number </b></small></td>
-        <td><small><?php echo $row1['sa_phn_no']; ?></small></td>
+        <td><small><?php echo $row1['al_phn_no']; ?></small></td>
       </tr>
       
     </tbody>
@@ -183,43 +169,33 @@ if($_SESSION['verified'] == 1){
       <tr>
       	
         <td><small><b> Email </b></small></td>
-        <td><small><?php echo $row1['sa_mail']; ?></small></td>
+        <td><small><?php echo $row1['al_mail']; ?></small></td>
       </tr>
       
     </tbody>
-  <?php if ($row2['sp_f_name'] != "") { ?>
-        <tbody>
-      <tr>
-      	
-        <td><small><b> Father's Name </b></small></td>
-        <td><small><?php echo $row2['sp_f_name']; ?></small></td>
-      </tr>
-      
-    </tbody>
-  <?php } if ($row2['sp_m_name']!="") { ?>
-        <tbody>
-      <tr>
-      	
-        <td><small><b> Mother's Name </b></small></td>
-        <td><small><?php echo $row2['sp_m_name'];?></small></td>
-      </tr>
-      
-    </tbody>
-        <tbody>
-     
-      
-    </tbody>
-  <?php } if ($row2['sp_add']!="") { ?>
+  <?php if ($row2['alp_add'] != "") { ?>
     <tbody>
-    	 <td><small><b> Address </b></small></td>
-			<td><small><?php echo $row2['sp_add'];?> </small></td>
-			
-		
+       <td><small><b> Address </b></small></td>
+      <td><small><?php echo $row2['alp_add'];?> </small></td>
+      
+    
+    </tbody>
+        
+        
+  <?php } if ($row2['alp_job']!="") { ?>
+    
+    <tbody>
+      <tr>
+        
+        <td><small><b> JOB </b></small></td>
+        <td><small><?php echo $row2['alp_job'];?></small></td>
+      </tr>
+      
     </tbody>
   <?php } ?>
   </table>
-  <small><a href="<?php echo $baseurl;?>stud_update_profile.php">
-    <button class="btn btn-outline-success">Update Profile</button>
+  <small><a href="<?php echo $baseurl;?>alum_update_profile.php">
+    <button class="btn btn-outline-info">Update Profile</button>
 </a>
 </small>
 </div>
