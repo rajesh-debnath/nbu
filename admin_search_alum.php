@@ -1,7 +1,8 @@
-<?php include 'controller/baseurlconfig.php'; ?>
 <?php session_start();
 include 'controller/connection.php';
 include 'controller/baseurlconfig.php';
+ 
+ 
 
 if($_SESSION['ad_username'] == "" || !isset($_SESSION['ad_username'])) 
 {
@@ -13,7 +14,7 @@ if($_SESSION['ad_username'] == "" || !isset($_SESSION['ad_username']))
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Admin Dashboard</title>
+	<title>Search Alumnis</title>
 	<link rel = "icon" href = "<?php echo $baseurl; ?>website_pic\logo.png" type = "image/x-icon">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 	<!-- 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
@@ -23,7 +24,7 @@ if($_SESSION['ad_username'] == "" || !isset($_SESSION['ad_username']))
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 	</head>
-	<body>
+<body>
 		<!-- navbar start -->
 		<div class="wrapper">
 			<header class="header">
@@ -45,7 +46,7 @@ if($_SESSION['ad_username'] == "" || !isset($_SESSION['ad_username']))
   			<span class="navbar-toggler-icon "></span>
   		</button>
   		<div class="collapse navbar-collapse" id="collapsibleNavbar">
-  			<ul class="navbar-nav font-weight-bold ml-auto ">
+<ul class="navbar-nav font-weight-bold ml-auto ">
   				<li class="nav-item">
   					<a class="nav-link " href="<?php echo $baseurl; ?>index.php">Home</a>
   				</li>
@@ -63,31 +64,42 @@ if($_SESSION['ad_username'] == "" || !isset($_SESSION['ad_username']))
 
   <!-- Navbar End -->
   <!-- card start -->
-  <div class="container col-sm" style="padding: 12.5%">
-
+ <center> <div class="container col-sm" style="padding: 12.5%">
+  	
   	<div class="card-deck">
   		<div class="card bg-light">
-  			<div class="card-body  rounded-lg border border-success shadow p-4 ">
-  				<p class="card-text text-success text-center font-weight-bolder ">Student Zone</p>
-  				<ul class="list-unstyled text-dark">
-  					<li>• <a class="text-dark" href="<?php echo $baseurl;?>admin_search_stud.php">MCA / MSc.Computer sc.</a></li>
-  					<li>• <a class="text-dark" href="<?php echo $baseurl;?>admin_stud_applicant_pending.php">Pending Applicant</a></li>
+  			<div class="card-body  rounded-lg border border-info shadow p-4 ">
+  				<p class="card-text text-info text-center font-weight-bolder ">Alumni Zone</p>
+  				
 
-  				</ul>
-  			</div>
-  		</div>
-  		<div class="card bg-light">
-  			<div class="card-body rounded-lg border border-info  shadow p-4">
-  				<p class="card-text text-center text-primary font-weight-bolder">Alumni Zone</p>
-  				<ul class="list-unstyled text-dark">
-  					<li>• <a class="text-dark" href="<?php echo $baseurl;?>admin_search_alum.php">MCA / MSc.Computer sc.</a></li>
-  					<li>• <a class="text-dark" href="<?php echo $baseurl;?>admin_alum_applicant_pending.php">Pending Applicant</a></li>
+  				<form method="post" action="<?php echo $baseurl;?>admin_alum_list.php">
+		<select name="sessions" class="form-control">
+		<?php 
+         $sql = "SELECT DISTINCT al_session FROM alum_applicant Where al_reg_no IN (SELECT alp_reg_no FROM alum_profile)";
+            $result = mysqli_query($conn, $sql);
 
-  				</ul>
+             while($sessions = mysqli_fetch_array($result)) { 
+               ?> 
+               <option value="<?php echo $sessions['al_session']; ?>"><?php echo $sessions['al_session']; ?></option>
+
+  <?php
+   }
+
+    ?>
+ </select><br>
+
+		<select name="course" class="form-control">
+ 			<option value="MCA">Masters of Computer Application</option>
+ 			<option value="Msc. Computer">Masters of Computer Sc.</option>
+ 		</select><br>
+		<input type="submit" class="btn btn-primary" name="ad_alum_submit">
+	</form>
+
+
   			</div>
   		</div>
   	</div>
-  </div>
+  </div></center>
   <!-- card end -->			
 
 <!-- Footer -->

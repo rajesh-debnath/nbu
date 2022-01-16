@@ -136,9 +136,11 @@
 
 	    <div class="card card rounded-lg border border-info bg-light shadow p-4 mb-4 bg-white ">
 	      <div class="card-body text-center ">
-	        <p class="card-text  text-primary font-weight-bolder">Alumini Zone</p>
-	        <button type="button" class="btn btn-outline-info mx-3 ">Log in</button>
-	          <button type="button" class="btn btn-outline-info mx-3">Register</button>
+	        <p class="card-text  text-primary font-weight-bolder">Alumni Zone</p>
+	        <a href="<?php echo $baseurl; ?>alum_login.php">
+	        <button type="button" class="btn btn-outline-info mx-3 ">Log in</button></a>
+	        <a href="<?php echo $baseurl; ?>alum_applicant_regno.php">
+	          <button type="button" class="btn btn-outline-info mx-3">Register</button></a>
 	      </div>
 	    </div>
 
