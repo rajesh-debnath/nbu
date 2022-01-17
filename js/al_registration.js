@@ -27,6 +27,25 @@ function s_a_name(){
 }
 
 
+
+function s_a_class_roll(){
+  var class_roll=document.getElementById("sa_class_roll").value;
+  var check_class_roll = /^\d+$/;
+  if (class_roll.length>2 || !check_class_roll.test(class_roll) || class_roll=="") {
+   document.getElementById("e_class_roll").innerHTML="**Maximum 2 digit Class Roll";
+   document.getElementById("sa_class_roll").focus();
+   document.getElementById("sa_class_roll").style.border="2px solid red";
+   document.getElementById("sa_class_roll").style.outline="none";
+   valid_class_roll=false;
+ }
+ else{
+  document.getElementById("sa_class_roll").style.border="2px solid green";
+  document.getElementById("sa_class_roll").style.outline="none";
+  document.getElementById("e_class_roll").innerHTML="";
+  valid_class_roll=true;
+}
+}
+
 function s_a_reg_no(){
   var reg_no=document.getElementById("sa_reg_no").value;
   var check_reg_no = /^\d{13}$/;
@@ -204,11 +223,9 @@ else{
    s_a_name();
  }
  else{
-  if (document.getElementById("gender").value=="") {
   if (document.getElementById("male").checked==false && document.getElementById("female").checked==false && document.getElementById("other").checked==false){
     document.getElementById("e_gender").innerHTML="**One opition must be checked out properly";
   }
-}
   else{
     document.getElementById("e_gender").innerHTML="";
     if (document.getElementById("dob").value=="") {
@@ -231,10 +248,6 @@ else{
         document.getElementById("e_course").innerHTML="";
         document.getElementById("sa_course").style.border="2px solid green";
         document.getElementById("sa_course").style.outline="none";
-        
-        
-         
-         
           if (valid_reg_no==false) {
            s_a_reg_no();
          }
@@ -266,9 +279,9 @@ else{
           
          }
 
-         }
+         
 
-       }
+      
      }
 
    }
@@ -281,6 +294,6 @@ else{
 
 }
 }
-
-
+}
+}
 
