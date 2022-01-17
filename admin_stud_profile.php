@@ -1,5 +1,5 @@
-<?php include 'controller/baseurlconfig.php'; ?>
-<?php session_start();
+<?php include 'controller/baseurlconfig.php'; 
+php session_start();
 include 'controller/connection.php';
 include 'controller/baseurlconfig.php';
 

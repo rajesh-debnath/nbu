@@ -48,8 +48,10 @@
    <nav class="navbar navbar-expand-md navbar-light sticky-top" style="background-color: rgba(194, 194, 214, 1.0);">
    	<div class="container" >
    		<div class="mr-auto">
-   			<input  type="search" placeholder="Search">
-   			<button class="btn-sm btn-outline-dark my-sm-0 bg-primary text-light ml-2" type="submit">Search</button>
+   			<form method="POST" action="profile.php">
+   			<input  type="search" name="search" placeholder="Search" maxlength="13" required>
+   			<button class="btn-sm btn-outline-dark my-sm-0 bg-primary text-light ml-2" name="submit" type="submit">Search</button>
+   			</form>
    		</div>
    		<!-- <span class="fa fa-search"></span> -->
 
