@@ -33,17 +33,14 @@
 		<div class="wrapper">
 			<header class="header">
 				<div class="topbar bg-dark">
-					<a class="navbar-brand ml-2 " href="#"><img class="d-inline-block align-top" src="<?php echo $baseurl; ?>website_pic\logo.png" alt="logo" width="10%"><span class="ml-5 text-light font-weight-bolder">University of North Bengal</span></a>
+					<a class="navbar-brand ml-2 " href="#"><img class="d-inline-block align-top" src="<?php echo $baseurl; ?>website_pic\logo.png" alt="logo" width="10%"><span class="ml-5 text-light font-weight-bolder">NBU CSA ZONE</span></a>
      <!--  <input  type="search" placeholder="Search">
      	<span class="fa fa-search"></span> -->
      </header>
    </div>
    <nav class="navbar navbar-expand-md navbar-light sticky-top" style="background-color: rgba(194, 194, 214, 1.0);">
    	<div class="container" >
-   		<div class="mr-auto">
-   			<input  type="search" placeholder="Search">
-   			<button class="btn-sm btn-outline-dark my-sm-0 bg-primary text-light ml-2" type="submit">Search</button>
-   		</div>
+   		
    		<!-- <span class="fa fa-search"></span> -->
 
    		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -55,7 +52,7 @@
    					<a class="nav-link " href="<?php echo $baseurl; ?>index.php">Home</a>
    				</li>
    				<li class="nav-item">
-   					<a class="nav-link " href="https://www.nbu.ac.in/abt/about.aspx">About NBU</a>
+   					<a class="nav-link " href="https://www.nbu.ac.in/dept/csa.aspx">About Us</a>
    				</li>
    				<li class="nav-item">
    					<a class="nav-link " href="<?php echo $baseurl; ?>contact.php">Contact Us</a>
@@ -69,47 +66,7 @@
 	
 				<!-- Navbar End -->
 
-<!-- <div class="container" style="padding-top: 95px;">
-    <div class="row">
-        <div class="col-md-6">
-            <div class="header">
-                <h1 style="font-family:Bahnschrift Light" >Drop Us a Message</h1>
-               
-                <br>
-                <hr class="mt-2 pt-0" >
-                 <p class="text-info">Do You have any questions? Please do not hesitate to contact us directly. Our team will come back to you within a matter of hours to help you.</p>
-                <form action="#" method="post">
-                    <div class="field-set">	
-                    	 <table class="table table-borderless font-weight-bold ">
-                            <tr>
 
-                               <td><label for="name">Your Name:</label></td>
-                               <td><input type="text" id="sa_name" name="name" placeholder="Enter Your Full Name(max:30charecters)" onkeyup="s_a_name()">
-                                <p id="e_n" class="text-danger small"></p></td>
-                            </tr>
-                             <tr>
-                        <td><label for="email">Your Email:</label></td>
-                        <td><input type="text" id="sa_email" name="email" id="email" placeholder="Enter your Email Id(e.g.: example@abc.com)" onkeyup="s_a_email()" />
-                            <p id="e_email" class="text-danger small"></p>
-                        </td>
-                    </tr>
-                    <tr>
-
-                               <td><label for="name">Your Message:</label></td>
-                               <td ><textarea class="form-control" type="text" id="msg" name="msg" placeholder="Enter Your Message(max:30charecters)"></textarea>
-                                
-                            </tr>
-                        </table>
-                    </div>
-                <div class="submit text-center pb-3">
-                 <button type="button" id="submit" class="btn btn-outline-primary mx-3"  name="button" onclick="validateForm()">Submit</button>
-             	</div>
-
-                </form>
-            </div>
-        </div>
-
--->
 <center>
 <div class="col-md-6 pb-3 text-muted" style="padding-top: 44px;">
     <h4>The Team</h4>
@@ -140,6 +97,7 @@
     <h5 class="mt-4 mb-0"><strong class="text-danger text-uppercase">rajesh debnath</strong></h5>
     <h6 class="text-dark m-0">Web Designer</h6>
     <p class="m-0 pt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem tempor, consectetur adip varius quam at, luctus dui. Mauris magna metus, dapibus nec turpis vel.</p>
+    
     </div>
     <!-- slide 2 end -->
 
@@ -181,7 +139,7 @@
 	<footer class="page-footer font-small bg-dark">
 
 	<!-- Copyright -->
-	  <div class="footer-copyright text-center py-3 text-white">© 2021 Copyright:
+	  <div class="footer-copyright text-center py-3 text-white">© 2022 Copyright | All rights reserved.
 
 	  </div>
 	<!-- Copyright -->
