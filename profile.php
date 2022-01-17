@@ -43,7 +43,7 @@ while($profile2 = mysqli_fetch_array($result2)) {
   $data15=$profile2['al_course'];
   $data16=$profile2['al_mail'];
 
-  if (emmpty($profile2['alp_job'])) {
+  if ($profile2['alp_job']=="") {
     $data17="**********";
   }
   else{
