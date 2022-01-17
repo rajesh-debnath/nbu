@@ -14,11 +14,6 @@
 	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 	  <script type="text/javascript" src="https://kit.fontawesome.com/67c66657c7.js"></script>
 	  <style>
-	  /* Make the image fully responsive 
-	  .carousel-inner img {
-	    width: 100%;
-	    height: 100%;
-	  }*/
 	  .card{
 	  	overflow: hidden;
 	  }
@@ -62,10 +57,10 @@
    					<a class="nav-link " href="<?php echo $baseurl; ?>index.php">Home</a>
    				</li>
    				<li class="nav-item">
-   					<a class="nav-link " href="https://www.nbu.ac.in/">About NBU</a>
+   					<a class="nav-link " href="https://www.nbu.ac.in/abt/about.aspx">About NBU</a>
    				</li>
    				<li class="nav-item">
-   					<a class="nav-link " href="https://www.nbu.ac.in/cus/TelephoneDirectory.aspx">Contact Us</a>
+   					<a class="nav-link " href="<?php echo $baseurl; ?>contact.php">Contact Us</a>
    				</li>    
 
    			</ul>
@@ -157,16 +152,14 @@
 		<!-- Card End -->
 
 
-	<!-- Footer -->
-	<footer class="page-footer font-small bg-dark">
 
-	  <!-- Copyright -->
-	  <div class="footer-copyright text-center py-3 text-white">© 2021 Copyright:
 
-	  </div>
-	  <!-- Copyright -->
-
-	</footer>
-	<!-- Footer -->
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2020 Copyright:
+    <a class="text-dark" href="#"></a>
+  </div>
+  <!-- Copyright -->
+</footer>
 	</body>
 	</html>

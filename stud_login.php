@@ -78,8 +78,11 @@
                     <a class="nav-link " href="<?php echo $baseurl; ?>index.php">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="https://www.nbu.ac.in/">About NBU</a>
-                </li>   
+                    <a class="nav-link " href="https://www.nbu.ac.in/abt/about.aspx">About NBU</a>
+                </li> 
+                <li class="nav-item">
+   					<a class="nav-link " href="<?php echo $baseurl; ?>contact.php">Contact Us</a>
+   				</li>     
 
             </ul>
    		</div>
@@ -90,7 +93,7 @@
 <!--Modal start -->
 <div class="modal-dialog modal-dialog-centered text-center modal-lg">
 		<div class="col-sm-8 main-section ">
-			<div class="modal-content bg-light border-success py-0 px-5 shadow p-4 mb-4">
+			<div class="modal-content bg-light border-success py-0 px-5 shadow p-3 mb-4">
 
 		<div class="col-12 user_img mt-n5 mb-4" >
 			<img src="<?php echo $baseurl; ?>website_pic\stud_logo.png" class="w-25">

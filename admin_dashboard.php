@@ -50,7 +50,7 @@ if($_SESSION['ad_username'] == "" || !isset($_SESSION['ad_username']))
   					<a class="nav-link " href="<?php echo $baseurl; ?>index.php">Home</a>
   				</li>
   				<li class="nav-item">
-  					<a class="nav-link " href="https://www.nbu.ac.in/">About NBU</a>
+  					<a class="nav-link " href="https://www.nbu.ac.in/abt/about.aspx">About NBU</a>
   				</li>
   				<li class="nav-item" >
   					<a class="nav-link" href="<?php echo $baseurl;?>controller/logout.php">Log Out</a>
