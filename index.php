@@ -14,11 +14,6 @@
 	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 	  <script type="text/javascript" src="https://kit.fontawesome.com/67c66657c7.js"></script>
 	  <style>
-	  /* Make the image fully responsive 
-	  .carousel-inner img {
-	    width: 100%;
-	    height: 100%;
-	  }*/
 	  .card{
 	  	overflow: hidden;
 	  }
@@ -40,7 +35,7 @@
 		<div class="wrapper">
 			<header class="header">
 				<div class="topbar bg-dark">
-					<a class="navbar-brand ml-2 " href="#"><img class="d-inline-block align-top" src="<?php echo $baseurl; ?>website_pic\logo.png" alt="logo" width="10%"><span class="ml-5 text-light font-weight-bolder">University of North Bengal</span></a>
+					<a class="navbar-brand ml-2 " href="#"><img class="d-inline-block align-top" src="<?php echo $baseurl; ?>website_pic\logo.png" alt="logo" width="10%"><span class="ml-5 text-light font-weight-bolder">NBU CSA ZONE</span></a>
      <!--  <input  type="search" placeholder="Search">
      	<span class="fa fa-search"></span> -->
      </header>
@@ -48,8 +43,10 @@
    <nav class="navbar navbar-expand-md navbar-light sticky-top" style="background-color: rgba(194, 194, 214, 1.0);">
    	<div class="container" >
    		<div class="mr-auto">
-   			<input  type="search" placeholder="Search">
-   			<button class="btn-sm btn-outline-dark my-sm-0 bg-primary text-light ml-2" type="submit">Search</button>
+   			<form method="POST" action="profile.php">
+   			<input  type="search" name="search" placeholder="Enter Your Reg. No." maxlength="13" required>
+   			<button class="btn-sm btn-outline-dark my-sm-0 bg-primary text-light ml-2" name="submit" type="submit">Search</button><span class="font-weight-bolder  ml-5"> </span>
+   			</form>
    		</div>
    		<!-- <span class="fa fa-search"></span> -->
 
@@ -62,10 +59,10 @@
    					<a class="nav-link " href="<?php echo $baseurl; ?>index.php">Home</a>
    				</li>
    				<li class="nav-item">
-   					<a class="nav-link " href="https://www.nbu.ac.in/">About NBU</a>
+   					<a class="nav-link " href="https://www.nbu.ac.in/dept/csa.aspx">About Us</a>
    				</li>
    				<li class="nav-item">
-   					<a class="nav-link " href="https://www.nbu.ac.in/cus/TelephoneDirectory.aspx">Contact Us</a>
+   					<a class="nav-link " href="<?php echo $baseurl; ?>contact.php">Contact Us</a>
    				</li>    
 
    			</ul>
@@ -86,21 +83,21 @@
 	  </ul>
 	  <div class="carousel-inner">
 	    <div class="carousel-item active">
-	      <img src="<?php echo $baseurl; ?>website_pic\nbu6.jpg" alt="Nbu" width="100%" height="400px">
+	      <img src="<?php echo $baseurl; ?>website_pic\nbu6.jpg" alt="Nbu" width="100%" height="350px">
 	      <div class="carousel-caption">
 	        <h3 class="text-dark"></h3>
 	      
 	      </div>   
 	    </div>
 	    <div class="carousel-item">
-	      <img src="<?php echo $baseurl; ?>website_pic\nbu7.jpg" alt="nbu" width="100%" height="400px">
+	      <img src="<?php echo $baseurl; ?>website_pic\nbu7.jpg" alt="nbu" width="100%" height="350px">
 	      <div class="carousel-caption">
 	        <h3 class="text-dark"></h3>
 	   
 	      </div>   
 	    </div>
 	    <div class="carousel-item">
-	      <img src="<?php echo $baseurl; ?>website_pic\nbu8.jpg" alt="unbu" width="100%" height="400px">
+	      <img src="<?php echo $baseurl; ?>website_pic\nbu8.jpg" alt="unbu" width="100%" height="350px">
 	      <div class="carousel-caption">
 	        <h3 class="text-dark"></h3>
 	        
@@ -159,16 +156,18 @@
 		<!-- Card End -->
 
 
-	<!-- Footer -->
+
+
+  <!-- Footer -->
 	<footer class="page-footer font-small bg-dark">
 
-	  <!-- Copyright -->
-	  <div class="footer-copyright text-center py-3 text-white">© 2021 Copyright:
+	<!-- Copyright -->
+	  <div class="footer-copyright text-center py-3 text-white">© 2022 Copyright | All rights reserved.
 
 	  </div>
-	  <!-- Copyright -->
+	<!-- Copyright -->
 
 	</footer>
-	<!-- Footer -->
+<!-- Footer -->  
 	</body>
 	</html>
