@@ -43,8 +43,10 @@
    <nav class="navbar navbar-expand-md navbar-light sticky-top" style="background-color: rgba(194, 194, 214, 1.0);">
    	<div class="container" >
    		<div class="mr-auto">
-   			<input  type="search" placeholder="Search">
-   			<button class="btn-sm btn-outline-dark my-sm-0 bg-primary text-light ml-2" type="submit">Search</button>
+   			<form method="POST" action="profile.php">
+   			<input  type="search" name="search" placeholder="Search" maxlength="13" required>
+   			<button class="btn-sm btn-outline-dark my-sm-0 bg-primary text-light ml-2" name="submit" type="submit">Search</button>
+   			</form>
    		</div>
    		<!-- <span class="fa fa-search"></span> -->
 
@@ -131,9 +133,11 @@
 
 	    <div class="card card rounded-lg border border-info bg-light shadow p-4 mb-4 bg-white ">
 	      <div class="card-body text-center ">
-	        <p class="card-text  text-primary font-weight-bolder">Alumini Zone</p>
-	        <button type="button" class="btn btn-outline-info mx-3 ">Log in</button>
-	          <button type="button" class="btn btn-outline-info mx-3">Register</button>
+	        <p class="card-text  text-primary font-weight-bolder">Alumni Zone</p>
+	        <a href="<?php echo $baseurl; ?>alum_login.php">
+	        <button type="button" class="btn btn-outline-info mx-3 ">Log in</button></a>
+	        <a href="<?php echo $baseurl; ?>alum_applicant_regno.php">
+	          <button type="button" class="btn btn-outline-info mx-3">Register</button></a>
 	      </div>
 	    </div>
 
