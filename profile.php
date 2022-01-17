@@ -43,7 +43,7 @@ while($profile2 = mysqli_fetch_array($result2)) {
   $data15=$profile2['al_course'];
   $data16=$profile2['al_mail'];
 
-  if (emmpty($profile2['alp_job'])) {
+  if ($profile2['alp_job']=="") {
     $data17="**********";
   }
   else{
@@ -100,9 +100,7 @@ while($profile2 = mysqli_fetch_array($result2)) {
         <li class="nav-item">
           <a class="nav-link " href="https://www.nbu.ac.in/dept/csa.aspx">About Us</a>
         </li>
-        <li class="nav-item" >
-          <a class="nav-link" href="<?php echo $baseurl;?>controller/logout.php">Log Out</a>
-        </li>    
+           
 
       </ul>
     </div>

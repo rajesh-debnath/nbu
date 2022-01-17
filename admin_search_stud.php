@@ -69,7 +69,7 @@ if($_SESSION['ad_username'] == "" || !isset($_SESSION['ad_username']))
   				
 
   				<form method="post" action="<?php echo $baseurl;?>admin_stud_list.php">
-		<select name="sessions" class="form-control">
+		<select name="sessions" class="form-control" required>
 		<?php 
          $sql = "SELECT DISTINCT sa_session FROM stud_applicant Where sa_reg_no IN (SELECT sp_reg_no FROM stud_profile)";
             $result = mysqli_query($conn, $sql);
