@@ -1,7 +1,7 @@
 <?php  
 session_start();
 include "connection.php";
-if (isset($_POST["register"])){
+if (isset($_POST["submit"])){
 	$name = filter_var($_POST["name"], FILTER_SANITIZE_STRING);
 	$reg = filter_var($_POST["reg_no"], FILTER_SANITIZE_STRING);
 	$session = filter_var($_POST["session"], FILTER_SANITIZE_STRING);
@@ -58,10 +58,6 @@ $result = mysqli_query($conn, $sql);
 		header("location: ../alum_applicant_register.phpt.php?error=imgwrongextent");
 		exit();
 	}
-	elseif (($pwd !== $repwd) !== false) {
-		header("location: ../alum_applicant_register.php?error=passwordsdonotmatch");
-		exit();
-	}
 	else {
 		move_uploaded_file($_FILES["pic"]["tmp_name"], $uplodto);
 		$sqlins = "INSERT INTO alum_applicant (al_profile_pic,	al_name,	al_gender,	al_dob,	al_reg_no,	al_session,	al_course,	al_phn_no,	al_mail,  al_pwd) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
@@ -76,8 +72,6 @@ $result = mysqli_query($conn, $sql);
 	mysqli_stmt_execute($stmt);
 
 	mysqli_stmt_close($stmt);
-	session_unset();
-	session_destroy();
 	header("Location:".$baseurl."../alum_applicant_register.php?error=none");
 	exit();
 	}

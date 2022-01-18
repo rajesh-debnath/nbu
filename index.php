@@ -35,7 +35,7 @@
 		<div class="wrapper">
 			<header class="header">
 				<div class="topbar bg-dark">
-					<a class="navbar-brand ml-2 " href="#"><img class="d-inline-block align-top" src="<?php echo $baseurl; ?>website_pic\logo.png" alt="logo" width="10%"><span class="ml-5 text-light font-weight-bolder">University of North Bengal</span></a>
+					<a class="navbar-brand ml-2 " href="#"><img class="d-inline-block align-top" src="<?php echo $baseurl; ?>website_pic\logo.png" alt="logo" width="10%"><span class="ml-5 text-light font-weight-bolder">NBU CSA ZONE</span></a>
      <!--  <input  type="search" placeholder="Search">
      	<span class="fa fa-search"></span> -->
      </header>
@@ -44,8 +44,8 @@
    	<div class="container" >
    		<div class="mr-auto">
    			<form method="POST" action="profile.php">
-   			<input  type="search" name="search" placeholder="Search" maxlength="13" required>
-   			<button class="btn-sm btn-outline-dark my-sm-0 bg-primary text-light ml-2" name="submit" type="submit">Search</button>
+   			<input  type="search" name="search" placeholder="Enter Your Reg. No." maxlength="13" required>
+   			<button class="btn-sm btn-outline-dark my-sm-0 bg-primary text-light ml-2" name="submit" type="submit">Search</button><span class="font-weight-bolder  ml-5"> </span>
    			</form>
    		</div>
    		<!-- <span class="fa fa-search"></span> -->
@@ -59,7 +59,7 @@
    					<a class="nav-link " href="<?php echo $baseurl; ?>index.php">Home</a>
    				</li>
    				<li class="nav-item">
-   					<a class="nav-link " href="https://www.nbu.ac.in/abt/about.aspx">About NBU</a>
+   					<a class="nav-link " href="https://www.nbu.ac.in/dept/csa.aspx">About Us</a>
    				</li>
    				<li class="nav-item">
    					<a class="nav-link " href="<?php echo $baseurl; ?>contact.php">Contact Us</a>
@@ -83,21 +83,21 @@
 	  </ul>
 	  <div class="carousel-inner">
 	    <div class="carousel-item active">
-	      <img src="<?php echo $baseurl; ?>website_pic\nbu6.jpg" alt="Nbu" width="100%" height="400px">
+	      <img src="<?php echo $baseurl; ?>website_pic\nbu6.jpg" alt="Nbu" width="100%" height="350px">
 	      <div class="carousel-caption">
 	        <h3 class="text-dark"></h3>
 	      
 	      </div>   
 	    </div>
 	    <div class="carousel-item">
-	      <img src="<?php echo $baseurl; ?>website_pic\nbu7.jpg" alt="nbu" width="100%" height="400px">
+	      <img src="<?php echo $baseurl; ?>website_pic\nbu7.jpg" alt="nbu" width="100%" height="350px">
 	      <div class="carousel-caption">
 	        <h3 class="text-dark"></h3>
 	   
 	      </div>   
 	    </div>
 	    <div class="carousel-item">
-	      <img src="<?php echo $baseurl; ?>website_pic\nbu8.jpg" alt="unbu" width="100%" height="400px">
+	      <img src="<?php echo $baseurl; ?>website_pic\nbu8.jpg" alt="unbu" width="100%" height="350px">
 	      <div class="carousel-caption">
 	        <h3 class="text-dark"></h3>
 	        
@@ -158,12 +158,16 @@
 
 
 
-  <!-- Copyright -->
-  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-    © 2020 Copyright:
-    <a class="text-dark" href="#"></a>
-  </div>
-  <!-- Copyright -->
-</footer>
+  <!-- Footer -->
+	<footer class="page-footer font-small bg-dark">
+
+	<!-- Copyright -->
+	  <div class="footer-copyright text-center py-3 text-white">© 2022 Copyright | All rights reserved.
+
+	  </div>
+	<!-- Copyright -->
+
+	</footer>
+<!-- Footer -->  
 	</body>
 	</html>
