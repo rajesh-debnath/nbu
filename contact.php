@@ -95,8 +95,8 @@
        <img class="d-inline-block align-top w-50 rounded-circle" src="<?php echo $baseurl; ?>website_pic\rajesh.jpg"  alt="logo">
     </div>
     <h5 class="mt-4 mb-0"><strong class="text-danger text-uppercase">rajesh debnath</strong></h5>
-    <h6 class="text-dark m-0">Web Designer</h6>
-    <p class="m-0 pt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem tempor, consectetur adip varius quam at, luctus dui. Mauris magna metus, dapibus nec turpis vel.</p>
+    <h6 class="text-dark m-0">Full Stack Developer (Beginner)</h6>
+    <p class="m-0 pt-3">I am a beginner in Full Stack Developement of Web Application. I have worked some projects. Programming languages like PHP, JAVASCRPT, HTML, CSS, BOOTSTRAP 4, SQL which I have used in my projects.</p>
     
     </div>
     <!-- slide 2 end -->
