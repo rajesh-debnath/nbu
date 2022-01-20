@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 
 
 
- $sql = "INSERT INTO reject (r_reg_no,r_pwd,r_resone) VALUES ('".$_SESSION['pending_al_reg_no']."','".$_SESSION['pending_al_pwd']."','".$resone."' )";
+ $sql = "INSERT INTO reject (r_reg_no,r_pwd,r_reason) VALUES ('".$_SESSION['pending_al_reg_no']."','".$_SESSION['pending_al_pwd']."','".$resone."' )";
   if ($conn->query($sql) === TRUE){ 
 
 
