@@ -82,3 +82,8 @@ $result = mysqli_query($conn, $sql);
 	}
 
 }
+
+
+else{
+	header("location: ../index.php");
+}

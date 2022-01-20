@@ -94,7 +94,7 @@ if (isset($_POST["login"])) {
 
 
 else{
-	header("location: ../stud_login.php?error=why");
+	header("location: ../stud_login.php?error=do poperly");
 }
 
 
