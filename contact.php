@@ -82,19 +82,19 @@
  <div class="carousel-inner">
     <div class="carousel-item text-center active">
     <div class="carousel-testimonial-img p-1  m-auto">
-      <img class="d-inline-block align-top w-25 rounded-circle" src="<?php echo $baseurl; ?>website_pic\ana.jpg"  alt="pic">
+      <img class="d-inline-block align-top w-25 rounded-circle" style="height: 150px;width: 60px;" src="<?php echo $baseurl; ?>website_pic\ana.jpg"  alt="pic">
     </div>
     <h5 class="mt-4 mb-0"><strong class="text-danger text-uppercase">Anamika Das</strong></h5><br>
-    <h6 class="text-dark m-0">Web Developer</h6>
-    <p class="m-0 pt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem tempor, consectetur adipiscing elit varius quam at, luctus dui. Mauris magna metus consectetur adipiscing elit.</p>
+    <h6 class="text-dark m-0">Frontend Developer</h6>
+    <p class="m-0 pt-3">I am a beginner in Web development. I have worked some projects. Programming languages like PHP, JAVASCRPT, HTML, CSS, BOOTSTRAP 4, SQL which I have used in my projects.</p>
     </div>
 <!--  slide 1 end-->
 
    <div class="carousel-item text-center">
     <div class="carousel-testimonial-img p-1  m-auto">
-       <img class="d-inline-block align-top w-50 rounded-circle" src="<?php echo $baseurl; ?>website_pic\rajesh.jpg"  alt="logo">
+       <img class="d-inline-block align-top w-50 rounded-circle" style="height: 120px;width: 80px;" src="<?php echo $baseurl; ?>website_pic\rajesh.jpg"  alt="logo">
     </div>
-    <h5 class="mt-4 mb-0"><strong class="text-danger text-uppercase">rajesh debnath</strong></h5>
+    <h5 class="mt-4 mb-0"><strong class="text-danger text-uppercase">Rajesh Debnath</strong></h5>
     <h6 class="text-dark m-0">Full Stack Developer (Beginner)</h6>
     <p class="m-0 pt-3">I am a beginner in Full Stack Developement of Web Application. I have worked some projects. Programming languages like PHP, JAVASCRPT, HTML, CSS, BOOTSTRAP 4, SQL which I have used in my projects.</p>
     
@@ -103,11 +103,11 @@
 
     <div class="carousel-item text-center">
     <div class="carousel-testimonial-img p-1  rounded-circle m-auto">
-       <img class="d-inline-block align-top w-25 rounded-circle" src="<?php echo $baseurl; ?>website_pic\sandipan.png"  alt="">
+       <img class="d-inline-block align-top w-25 rounded-circle"  src="<?php echo $baseurl; ?>website_pic\sandipan.png"  alt="">
     </div>
-    <h5 class="mt-4 mb-0"><strong class="text-danger text-uppercase">sandipan pal</strong></h5>
-    <h6 class="text-dark m-0">Seo Analyst</h6>
-    <p class="m-0 pt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem tempor, varius quam at, consectetur adipiscing elit consectetur adipiscing elit luctus dui. Mauris magna metus.</p>
+    <h5 class="mt-4 mb-0"><strong class="text-danger text-uppercase">Sandipan Pal</strong></h5>
+    <h6 class="text-dark m-0">Backend Developer</h6>
+    <p class="m-0 pt-3">I am a beginner in Web development. I have worked some projects. Programming languages like PHP, JAVASCRPT, HTML, CSS, BOOTSTRAP 4, SQL which I have used in my projects.</p>
     </div> 
     <!-- slider 3 end -->
 
@@ -115,9 +115,9 @@
     <div class="carousel-testimonial-img p-1  rounded-circle m-auto">
        <img class="d-inline-block align-top w-25 rounded-circle" src="<?php echo $baseurl; ?>website_pic\su.jpg"  alt="logo">
     </div>
-    <h5 class="mt-4 mb-0"><strong class="text-danger text-uppercase">subham pramanic</strong></h5>
-    <h6 class="text-dark m-0">Seo Analyst</h6>
-    <p class="m-0 pt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem tempor, varius quam at, consectetur adipiscing elit consectetur adipiscing elit luctus dui. Mauris magna metus.</p>
+    <h5 class="mt-4 mb-0"><strong class="text-danger text-uppercase">Subham Paramanik</strong></h5>
+    <h6 class="text-dark m-0">Assistant Frontend Developer</h6>
+    <p class="m-0 pt-3">I am a beginner in Web development. I have worked some projects. Programming languages like PHP, JAVASCRPT, HTML, CSS, BOOTSTRAP 4, SQL which I have used in my projects.</p>
     </div>
    <!--  slider 4 end -->
    </div>
